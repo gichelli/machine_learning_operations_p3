@@ -1,8 +1,28 @@
-from sklearn.metrics import fbeta_score, precision_score, recall_score
+import pytest
+import pandas as pd
+import os
 
 
-# Optional: implement hyperparameter tuning.
-def train_model(X_train, y_train):
+@pytest.fixture(scope="session")
+def data():
+    print("******inside test***********")
+    print(os.getcwd())
+    # path = '../../data/census.csv'
+    path = 'data/census.csv'
+    df = pd.read_csv(path, low_memory=False)
+    print("-------------")
+    return df
+
+def test_data_length(data):
+    """
+    We test that we have enough data to continue
+    """
+    assert len(data) > 1000
+
+
+
+
+def test_train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.
 
@@ -21,7 +41,7 @@ def train_model(X_train, y_train):
     pass
 
 
-def compute_model_metrics(y, preds):
+def test_compute_model_metrics(y, preds):
     """
     Validates the trained machine learning model using precision, recall, and F1.
 
@@ -37,13 +57,10 @@ def compute_model_metrics(y, preds):
     recall : float
     fbeta : float
     """
-    fbeta = fbeta_score(y, preds, beta=1, zero_division=1)
-    precision = precision_score(y, preds, zero_division=1)
-    recall = recall_score(y, preds, zero_division=1)
-    return precision, recall, fbeta
+    pass
 
 
-def inference(model, X):
+def test_inference(model, X):
     """ Run model inferences and return the predictions.
 
     Inputs
