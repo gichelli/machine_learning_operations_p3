@@ -145,31 +145,29 @@ def test_load():
             assert load(model_path + model_name)
     except AssertionError as err:
         logging.error(
-            "ERROR: Testing test_load - lb has not loaded properly")
+            "ERROR: Testing test_load - model has not loaded properly")
         raise err  
         
 
+def test_inference(data, get_model, get_test_data):
+    '''
+    test prediction's type
+    '''
+    try:
+        preds = inference(get_model, get_test_data[0])
+        assert isinstance(preds, np.ndarray)
+    except AssertionError as err:
+        logging.error(
+            "ERROR: Testing test_inference - preds is not a np.array")
+        raise err
 
-
-# def test_inference(data, get_model, get_test_data):
-#     '''
-#     test prediction's type
-#     '''
-#     try:
-#         preds = inference(get_model, get_test_data[0])
-#         assert isinstance(preds, np.ndarray)
-#     except AssertionError as err:
-#         logging.error(
-#             "ERROR: Testing test_inference - preds is not a np.array")
-#         raise err
-
-#     # test size of predictions
-#     try:
-#         assert len(preds) == get_test_data[0].shape[0]
-#     except AssertionError as err:
-#         logging.error(
-#             "ERROR: Testing test_inference - preds is not the same size as test data")
-#         raise err
+    # test size of predictions
+    try:
+        assert len(preds) == get_test_data[0].shape[0]
+    except AssertionError as err:
+        logging.error(
+            "ERROR: Testing test_inference - preds is not the same size as test data")
+        raise err
     
 
 
