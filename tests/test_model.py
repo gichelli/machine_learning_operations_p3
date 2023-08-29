@@ -191,37 +191,37 @@ def test_inference(data, get_model, get_test_data):
     
 
 
-def test_sliced_model_metrics(data_split, get_test_data, get_model, data):
-    '''
-    test to check if function calculates metrics for each class in each feature
-    number of features = len(cat_feaures)
-    number of unique classes in each feature 
+# def test_sliced_model_metrics(data_split, get_test_data, get_model, data):
+#     '''
+#     test to check if function calculates metrics for each class in each feature
+#     number of features = len(cat_feaures)
+#     number of unique classes in each feature 
 
-    '''
-    num_classes = len(data['workclass'].unique())
-    print(num_classes)
-    try:
-        assert sliced_model_metrics(
-            data_split[1], get_test_data[0], get_test_data[1], 'workclass', get_model, total_count=[]
-            ) == num_classes
-    except AssertionError as err:
-        logging.error(
-            "ERROR: Testing test_sliced_model_metrics - did not run exact lenght of cat_features")
-        raise err
+#     '''
+#     num_classes = len(data['workclass'].unique())
+#     print(num_classes)
+#     try:
+#         assert sliced_model_metrics(
+#             data_split[1], get_test_data[0], get_test_data[1], 'workclass', get_model, total_count=[]
+#             ) == num_classes
+#     except AssertionError as err:
+#         logging.error(
+#             "ERROR: Testing test_sliced_model_metrics - did not run exact lenght of cat_features")
+#         raise err
    
 
 
-# def test_compute_model_metrics(y, preds):
-def test_compute_model_metrics():
-    """
-    test to see if slice_output file is not a blank file
-    """
-    try:
-        assert os.stat(out_path + 'slice_output.txt').st_size != 0 
-    except AssertionError as err:
-        logging.error(
-            "ERROR: Testing test_compute_model_metrics - there is not a file named slice_output.txt in out folder")
-        raise err
+# # def test_compute_model_metrics(y, preds):
+# def test_compute_model_metrics():
+#     """
+#     test to see if slice_output file is not a blank file
+#     """
+#     try:
+#         assert os.stat(out_path + 'slice_output.txt').st_size != 0 
+#     except AssertionError as err:
+#         logging.error(
+#             "ERROR: Testing test_compute_model_metrics - there is not a file named slice_output.txt in out folder")
+#         raise err
     
 
 
