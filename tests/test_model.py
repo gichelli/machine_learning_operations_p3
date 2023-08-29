@@ -191,17 +191,17 @@ def test_sliced_model_metrics(data_split, get_test_data, get_model, data):
    
 
 
-# # def test_compute_model_metrics(y, preds):
-# def test_compute_model_metrics():
-#     """
-#     test to see if slice_output file is not a blank file
-#     """
-#     try:
-#         assert os.stat(out_path + 'slice_output.txt').st_size != 0 
-#     except AssertionError as err:
-#         logging.error(
-#             "ERROR: Testing test_compute_model_metrics - there is not a file named slice_output.txt in out folder")
-#         raise err
+# def test_compute_model_metrics(y, preds):
+def test_compute_model_metrics():
+    """
+    test to see if slice_output file is not a blank file
+    """
+    try:
+        assert os.stat(out_path + 'slice_output.txt').st_size != 0 
+    except AssertionError as err:
+        logging.error(
+            "ERROR: Testing test_compute_model_metrics - there is not a file named slice_output.txt in out folder")
+        raise err
     
 
 
