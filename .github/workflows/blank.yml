@@ -4,7 +4,6 @@ on: [push] # When this action runs.
 
 jobs:
   build:
-
     runs-on: ubuntu-latest # Which OS this runs on, you can also build on Windows or MacOS.
     # strategy:
     #   matrix:
@@ -15,7 +14,7 @@ jobs:
     - name: Set up Python 3.9 # Name of an action that sets up Python.
       uses: actions/setup-python@v3 # A pre-built GitHub Action that sets up a Python environment.
       with:
-        python-version: 3.9
+        python-version: 3.8
     - name: Install dependencies # The first step that isn't just calling another action.
       # Upgrade pip to the latest version.
       # If we have a requirements.txt, then install it.
