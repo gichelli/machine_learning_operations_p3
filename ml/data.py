@@ -12,7 +12,6 @@ def import_data(pth, skipinitialspace):
     output:
             df: pandas dataframe
     '''
-    print("*************inside import_data*****************")
     return pd.read_csv(pth, skipinitialspace = True)
 
 def process_data(
@@ -56,7 +55,6 @@ def process_data(
         Trained LabelBinarizer if training is True, otherwise returns the binarizer
         passed in.
     """
-    print("***************inside process_data******************")
     if label is not None:
         y = X[label]
         X = X.drop([label], axis=1)

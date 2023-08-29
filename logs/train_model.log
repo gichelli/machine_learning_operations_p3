@@ -1,0 +1,10 @@
+root - INFO - Creating dataframe
+root - INFO - Splitting train-test data
+root - INFO - Checking if encoder and labelbinarizer exist
+root - INFO - If model exists, loading it.. else training and saving it..
+root - INFO - loading encoder and lb..
+root - INFO - precessing test data..
+root - INFO - getting predictions..
+root - INFO - computing metrics for all data..
+root - INFO - Computing metrics for each categorical column slice..
+root - INFO - done.

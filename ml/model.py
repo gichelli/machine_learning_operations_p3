@@ -1,7 +1,63 @@
+'''
+Script to define model functions
+
+Author: Gissella Gonzalez
+Date  : August 28, 2023
+'''
+# import libraries
+import os
 from sklearn.metrics import fbeta_score, precision_score, recall_score
-from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 import joblib
+
+out_path =  'out/'
+
+def check_econder_lb(path):
+    '''
+    check if encoder or LabelBinarizer already exists
+    input: path of obkect locations
+    output: returns int that ensures both object exists in path
+    '''
+    count = 0
+    if os.path.isfile(path + 'encoder.pkl'):
+        # flag
+        count += 1
+        # encoder = load_model(path + 'encoder.pkl')
+    if os.path.isfile(path + 'lb.pkl'):
+        # flag
+        count += 1
+        # lb = load_model(path + 'lb.pkl')
+    return count
+
+
+def get_encoder_lb(path):
+    '''
+    if both Encoder and LabelBinarizer are available load them
+    input: path of object locations
+    output: returns Encoder and LabelBinarizer
+    '''
+    encoder = load_model(path + 'encoder.pkl')
+    lb = load_model(path + 'lb.pkl')
+    return encoder, lb
+
+
+def load_model(path):
+    '''
+    load model from path
+    input: path of model locations
+    output: returns model
+    '''
+    model = joblib.load(open(path, 'rb'))
+    return model
+
+
+def save_encoder_and_lb(path, encoder, lb):
+    '''
+    save Encoder and LabelBinarizer
+    input: path of object locations, Encoder and LabelBinarizer
+    '''
+    joblib.dump(encoder, path + 'encoder.pkl')
+    joblib.dump(lb, path + 'lb.pkl')
 
 
 # Optional: implement hyperparameter tuning.
@@ -20,47 +76,23 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
-    print("************inside train_model function")
-    rfc = RandomForestClassifier(max_depth=10, min_samples_split=400, min_samples_leaf=2, criterion='gini',random_state=42)
+    rfc = RandomForestClassifier(
+        max_depth=10,
+        min_samples_split=400,
+        min_samples_leaf=2,
+        criterion='gini',
+        random_state=42)
     rfc.fit(X_train, y_train)
 
     return rfc
 
 
-#save the model
-def save_model(model):
-    joblib.dump(model, '../model/model.pkl')
-     
-
-# lead the model
-def load_model():
-    pass
-
-
-# main instruction ---Write a function that computes model metrics on slices of the data.
-
-# Write a function that computes performance on model slices. 
-# I.e. a function that computes the performance metrics when the value of a given 
-# feature is held fixed. E.g. for education, it would print out the model metrics 
-# for each slice of data that has a particular value for education. You should have
-# one set of outputs for every single unique value in education.
-
-
-
-# Complete the stubbed function or write a new one that for a given categorical 
-# variable computes the metrics when its value is held fixed.
-
-
-# Write a script that runs this function (or include it as part of the training script) 
-# that iterates through the distinct values in one of the features and prints out the 
-# model metrics for each value.
-
-
-
-# Output the printout to a file named slice_output.txt.
-
-
-
+# save the model
+def save_model(model, path):
+    '''
+    save model in given path
+    '''
+    joblib.dump(model, path)
 
 
 def inference(model, X):
@@ -80,47 +112,41 @@ def inference(model, X):
     preds = model.predict(X)
     return preds
 
-# def feature_slice(df, y_test, preds, col):
-#     '''
-#     Function to compute model metrics on slices of the dataset
-#     '''
 
-#     for cls in df[col].unique():
-#         print(cls)
+def sliced_model_metrics(df, X_test, y_test, feature, model, total_count = []):
+    '''
+    Function to compute model metrics on slices of the dataset
+    input:
+    df - splited test dataframe
+    X_test - processed_data test numpy.ndarray
+    y_test - processed_data labels values numpy.ndarray
+    feature - column name
+    model
+    '''
+    count = 0
+    with open(out_path + 'slice_output.txt', 'a', encoding="utf8") as file:
+        file.write('####################################################\n')
+        file.writelines('Performance metrics for ' + feature + ' slice:\n')
+        file.write('####################################################\n')
+        file.write('\n')
 
-#         compute_model_metrics(y_test, preds, cls)
-#         # df_temp = df[df["class"] == cls]
-#         # mean = df_temp[col].mean()
-#         # stddev = df_temp[col].std()
-#         # print(f"Class: {cls}")
-#         # print(f"{col} mean: {mean:.4f}")
-#         # print(f"{col} stddev: {stddev:.4f}")
-#     # print()
-
-def sliced_model_metrics(df, X_test, y_test, feature, model):
-    print("Performance metrics for " + feature + " slice:\n")
     for cls in df[feature].unique():
+        count+=1
         row_slice = df[feature] == cls
-        
         preds = inference(model, X_test[row_slice])
-        print("Computer metrics for " + cls + " class")
-        
+
+        with open(out_path + 'slice_output.txt', 'a', encoding="utf8") as file:
+            file.writelines('Computer metrics for ' + cls + ' class\n')
+
         compute_model_metrics(y_test[row_slice], preds)
-#         print(x)
-        
-#     return x
-        
-#     return x
-# slice_dataframe(df, "sepal_length")
-# slice_iris(df, "sepal_width")
-# slice_iris(df, "petal_length")
-# slice_iris(df, "petal_width")
+    return count
+
 
 
 def compute_model_metrics(y, preds):
     """
     Validates the trained machine learning model using precision, recall, and F1.
-
+    prints metrics to slice_output.txt file
     Inputs
     ------
     y : np.array
@@ -133,12 +159,20 @@ def compute_model_metrics(y, preds):
     recall : float
     fbeta : float
     """
-    #     print("************--->inside compute_model_metrics ****************")
+
     precision = precision_score(y, preds, zero_division=1)
     recall = recall_score(y, preds, zero_division=1)
     fbeta = fbeta_score(y, preds, beta=1, zero_division=1)
-    print(f"precision: {precision:.4f}")
-    print(f"recall: {recall:.4f}")
-    print(f"fbeta: {fbeta:.4f}\n")
-#     print()
+
+    with open(out_path + 'slice_output.txt', 'a', encoding="utf8") as file:
+        # file.write('precision' + str(precision))
+        # file.write('recall' + str(recall))
+        # file.write('fbeta' + str(fbeta))
+
+        file.writelines(f'precision: {precision:.4f}\n')
+        file.writelines(f'recall: {recall:.4f}\n')
+        file.writelines(f'fbeta: {fbeta:.4f}\n')
+        file.write('\n')
+        file.close()
+
     return precision, recall, fbeta
