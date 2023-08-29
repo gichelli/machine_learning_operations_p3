@@ -51,12 +51,15 @@ def get_model():
     # path = os.getcwd()
     # path = os.path.dirname(os.getcwd())
     current_dirs_parent = os.path.dirname(os.getcwd())
-    # print("**********************--------------------")
+    print("**********************--------------------")
     # print(path)
     # print(current_dirs_parent)
     # print("**********************--------------------")
     # path = 'model/'
     # x = ''
+    print(os.getcwd())
+    print("**********************--------------------")
+
     model = load_model(model_path + 'model.pkl')
     return model
 
