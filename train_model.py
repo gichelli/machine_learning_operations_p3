@@ -52,8 +52,12 @@ train, test = train_test_split(data, test_size=0.20)
 
 # if encoder and lb exist load them, else create them
 logging.info('Checking if model, encoder and labelbinarizer exist')
-check = check_econder_lb(model_path)
+check = check_econder_lb(model_path, model_name, encoder_name, lb_name)
+print("------**************here**********")
+print(check)
 if check == 3:
+    print("**************here**********")
+    print(check)
     model = load(model_path + model_name)
     encoder= load(model_path + encoder_name)
     lb = load(model_path + lb_name)

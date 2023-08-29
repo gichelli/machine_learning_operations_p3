@@ -3,41 +3,46 @@ Performance metrics for workclass slice:
 ####################################################
 
 Computer metrics for Private class
-precision: 0.8285
-recall: 0.4816
-fbeta: 0.6091
+precision: 0.8168
+recall: 0.4802
+fbeta: 0.6049
 
 Computer metrics for Local-gov class
-precision: 0.7912
-recall: 0.5538
-fbeta: 0.6516
-
-Computer metrics for Federal-gov class
-precision: 0.8636
-recall: 0.4750
-fbeta: 0.6129
-
-Computer metrics for State-gov class
-precision: 0.7692
-recall: 0.5970
-fbeta: 0.6723
+precision: 0.7333
+recall: 0.5641
+fbeta: 0.6377
 
 Computer metrics for Self-emp-not-inc class
-precision: 0.6909
-recall: 0.5033
-fbeta: 0.5824
+precision: 0.7593
+recall: 0.5125
+fbeta: 0.6119
+
+Computer metrics for State-gov class
+precision: 0.8136
+recall: 0.6761
+fbeta: 0.7385
 
 Computer metrics for ? class
-precision: 0.9000
-recall: 0.4091
-fbeta: 0.5625
+precision: 0.8125
+recall: 0.3250
+fbeta: 0.4643
 
 Computer metrics for Self-emp-inc class
-precision: 0.7800
-recall: 0.7573
-fbeta: 0.7685
+precision: 0.7963
+recall: 0.6277
+fbeta: 0.7020
+
+Computer metrics for Federal-gov class
+precision: 0.8250
+recall: 0.4783
+fbeta: 0.6055
 
 Computer metrics for Without-pay class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
+Computer metrics for Never-worked class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
@@ -46,114 +51,114 @@ fbeta: 1.0000
 Performance metrics for education slice:
 ####################################################
 
-Computer metrics for 9th class
-precision: 1.0000
-recall: 0.1667
-fbeta: 0.2857
-
-Computer metrics for HS-grad class
-precision: 0.8889
-recall: 0.1605
-fbeta: 0.2718
-
-Computer metrics for Some-college class
-precision: 0.8871
-recall: 0.1890
-fbeta: 0.3116
-
-Computer metrics for Masters class
-precision: 0.8667
-recall: 0.8895
-fbeta: 0.8779
-
-Computer metrics for Bachelors class
-precision: 0.7235
-recall: 0.8169
-fbeta: 0.7674
-
-Computer metrics for Assoc-voc class
-precision: 0.9048
-recall: 0.3016
-fbeta: 0.4524
-
-Computer metrics for Assoc-acdm class
-precision: 0.9091
-recall: 0.1754
-fbeta: 0.2941
-
-Computer metrics for 11th class
-precision: 1.0000
-recall: 0.1250
-fbeta: 0.2222
-
-Computer metrics for 10th class
+Computer metrics for 12th class
 precision: 1.0000
 recall: 0.1000
 fbeta: 0.1818
 
-Computer metrics for Prof-school class
-precision: 0.8558
-recall: 0.8900
-fbeta: 0.8725
+Computer metrics for Masters class
+precision: 0.8279
+recall: 0.8641
+fbeta: 0.8456
 
-Computer metrics for 5th-6th class
+Computer metrics for HS-grad class
+precision: 0.9508
+recall: 0.1625
+fbeta: 0.2775
+
+Computer metrics for Bachelors class
+precision: 0.7125
+recall: 0.7935
+fbeta: 0.7508
+
+Computer metrics for Some-college class
+precision: 0.9452
+recall: 0.2575
+fbeta: 0.4047
+
+Computer metrics for Assoc-voc class
+precision: 0.9167
+recall: 0.2750
+fbeta: 0.4231
+
+Computer metrics for Doctorate class
+precision: 0.8654
+recall: 0.7759
+fbeta: 0.8182
+
+Computer metrics for 7th-8th class
 precision: 1.0000
-recall: 0.0000
-fbeta: 0.0000
+recall: 0.0909
+fbeta: 0.1667
 
 Computer metrics for Preschool class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for 7th-8th class
+Computer metrics for 10th class
 precision: 1.0000
-recall: 0.3000
-fbeta: 0.4615
+recall: 0.1667
+fbeta: 0.2857
 
-Computer metrics for 12th class
+Computer metrics for 11th class
 precision: 1.0000
-recall: 0.4000
-fbeta: 0.5714
+recall: 0.3333
+fbeta: 0.5000
 
-Computer metrics for Doctorate class
-precision: 0.9273
-recall: 0.8361
-fbeta: 0.8793
+Computer metrics for Assoc-acdm class
+precision: 0.8750
+recall: 0.2642
+fbeta: 0.4058
+
+Computer metrics for 9th class
+precision: 1.0000
+recall: 0.0000
+fbeta: 0.0000
+
+Computer metrics for Prof-school class
+precision: 0.8941
+recall: 0.8261
+fbeta: 0.8588
 
 Computer metrics for 1st-4th class
 precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
+recall: 0.0000
+fbeta: 0.0000
+
+Computer metrics for 5th-6th class
+precision: 1.0000
+recall: 0.2857
+fbeta: 0.4444
 
 ####################################################
 Performance metrics for marital-status slice:
 ####################################################
 
-Computer metrics for Separated class
-precision: 1.0000
-recall: 0.3125
-fbeta: 0.4762
-
-Computer metrics for Married-civ-spouse class
-precision: 0.7941
-recall: 0.5513
-fbeta: 0.6508
-
 Computer metrics for Never-married class
 precision: 1.0000
-recall: 0.2841
-fbeta: 0.4425
+recall: 0.2396
+fbeta: 0.3866
 
-Computer metrics for Widowed class
-precision: 1.0000
-recall: 0.4545
-fbeta: 0.6250
+Computer metrics for Married-civ-spouse class
+precision: 0.7905
+recall: 0.5550
+fbeta: 0.6521
 
 Computer metrics for Divorced class
 precision: 1.0000
-recall: 0.1915
-fbeta: 0.3214
+recall: 0.2121
+fbeta: 0.3500
+
+Computer metrics for Separated class
+precision: 1.0000
+recall: 0.2308
+fbeta: 0.3750
+
+Computer metrics for Widowed class
+precision: 1.0000
+recall: 0.2500
+fbeta: 0.4000
 
 Computer metrics for Married-spouse-absent class
 precision: 1.0000
@@ -162,84 +167,79 @@ fbeta: 0.0000
 
 Computer metrics for Married-AF-spouse class
 precision: 1.0000
-recall: 0.0000
-fbeta: 0.0000
+recall: 0.5000
+fbeta: 0.6667
 
 ####################################################
 Performance metrics for occupation slice:
 ####################################################
 
-Computer metrics for Priv-house-serv class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Craft-repair class
-precision: 0.7636
-recall: 0.2308
-fbeta: 0.3544
+Computer metrics for Other-service class
+precision: 0.0000
+recall: 0.0000
+fbeta: 0.0000
 
 Computer metrics for Exec-managerial class
-precision: 0.8287
-recall: 0.6700
-fbeta: 0.7409
+precision: 0.8393
+recall: 0.6790
+fbeta: 0.7507
 
 Computer metrics for Adm-clerical class
-precision: 0.7209
-recall: 0.2844
-fbeta: 0.4079
+precision: 0.9302
+recall: 0.3883
+fbeta: 0.5479
 
 Computer metrics for Machine-op-inspct class
-precision: 0.8571
-recall: 0.2105
-fbeta: 0.3380
-
-Computer metrics for Prof-specialty class
-precision: 0.8184
-recall: 0.7655
-fbeta: 0.7911
-
-Computer metrics for Protective-serv class
-precision: 0.8571
-recall: 0.2449
-fbeta: 0.3810
-
-Computer metrics for Sales class
-precision: 0.7500
-recall: 0.5246
-fbeta: 0.6174
-
-Computer metrics for Tech-support class
-precision: 0.8462
-recall: 0.3438
-fbeta: 0.4889
-
-Computer metrics for Other-service class
-precision: 1.0000
-recall: 0.2000
-fbeta: 0.3333
+precision: 0.5556
+recall: 0.1163
+fbeta: 0.1923
 
 Computer metrics for Handlers-cleaners class
-precision: 1.0000
-recall: 0.1000
-fbeta: 0.1818
+precision: 0.6000
+recall: 0.1364
+fbeta: 0.2222
+
+Computer metrics for Prof-specialty class
+precision: 0.7948
+recall: 0.7650
+fbeta: 0.7796
+
+Computer metrics for Sales class
+precision: 0.7578
+recall: 0.4802
+fbeta: 0.5879
+
+Computer metrics for Tech-support class
+precision: 0.7727
+recall: 0.3148
+fbeta: 0.4474
 
 Computer metrics for Farming-fishing class
-precision: 0.2727
-recall: 0.2000
-fbeta: 0.2308
+precision: 0.5000
+recall: 0.2857
+fbeta: 0.3636
 
 Computer metrics for ? class
-precision: 0.9000
-recall: 0.4091
-fbeta: 0.5625
+precision: 0.8125
+recall: 0.3250
+fbeta: 0.4643
+
+Computer metrics for Craft-repair class
+precision: 0.7719
+recall: 0.2178
+fbeta: 0.3398
+
+Computer metrics for Protective-serv class
+precision: 0.8947
+recall: 0.3778
+fbeta: 0.5312
 
 Computer metrics for Transport-moving class
-precision: 0.8333
-recall: 0.1786
-fbeta: 0.2941
+precision: 0.7143
+recall: 0.1449
+fbeta: 0.2410
 
-Computer metrics for Armed-Forces class
+Computer metrics for Priv-house-serv class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
@@ -248,280 +248,285 @@ fbeta: 1.0000
 Performance metrics for relationship slice:
 ####################################################
 
-Computer metrics for Unmarried class
-precision: 1.0000
-recall: 0.2121
-fbeta: 0.3500
-
-Computer metrics for Husband class
-precision: 0.7857
-recall: 0.5582
-fbeta: 0.6527
-
 Computer metrics for Not-in-family class
 precision: 1.0000
-recall: 0.2679
-fbeta: 0.4225
+recall: 0.2265
+fbeta: 0.3694
 
 Computer metrics for Own-child class
 precision: 1.0000
-recall: 0.1333
-fbeta: 0.2353
+recall: 0.3333
+fbeta: 0.5000
+
+Computer metrics for Husband class
+precision: 0.7790
+recall: 0.5602
+fbeta: 0.6517
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.2051
+fbeta: 0.3404
 
 Computer metrics for Wife class
-precision: 0.8764
-recall: 0.5166
-fbeta: 0.6500
+precision: 0.9059
+recall: 0.5238
+fbeta: 0.6638
 
 Computer metrics for Other-relative class
-precision: 0.6667
-recall: 0.2222
-fbeta: 0.3333
+precision: 1.0000
+recall: 0.0000
+fbeta: 0.0000
 
 ####################################################
 Performance metrics for race slice:
 ####################################################
 
 Computer metrics for White class
-precision: 0.8141
-recall: 0.5142
-fbeta: 0.6303
-
-Computer metrics for Black class
-precision: 0.8000
-recall: 0.4118
-fbeta: 0.5437
+precision: 0.8100
+recall: 0.5096
+fbeta: 0.6256
 
 Computer metrics for Asian-Pac-Islander class
-precision: 0.6383
-recall: 0.5455
-fbeta: 0.5882
+precision: 0.6731
+recall: 0.6250
+fbeta: 0.6481
+
+Computer metrics for Black class
+precision: 0.8056
+recall: 0.3625
+fbeta: 0.5000
 
 Computer metrics for Other class
-precision: 0.6000
-recall: 0.5000
-fbeta: 0.5455
+precision: 0.6250
+recall: 0.6250
+fbeta: 0.6250
 
 Computer metrics for Amer-Indian-Eskimo class
-precision: 1.0000
-recall: 0.4000
-fbeta: 0.5714
+precision: 0.7500
+recall: 0.5000
+fbeta: 0.6000
 
 ####################################################
 Performance metrics for sex slice:
 ####################################################
 
-Computer metrics for Female class
-precision: 0.9029
-recall: 0.3908
-fbeta: 0.5455
-
 Computer metrics for Male class
-precision: 0.7938
-recall: 0.5313
-fbeta: 0.6366
+precision: 0.7868
+recall: 0.5230
+fbeta: 0.6283
+
+Computer metrics for Female class
+precision: 0.9245
+recall: 0.4135
+fbeta: 0.5714
 
 ####################################################
 Performance metrics for native-country slice:
 ####################################################
 
-Computer metrics for Mexico class
-precision: 1.0000
-recall: 0.3750
-fbeta: 0.5455
-
 Computer metrics for United-States class
-precision: 0.8135
-recall: 0.5097
-fbeta: 0.6267
+precision: 0.8113
+recall: 0.5031
+fbeta: 0.6211
 
-Computer metrics for Cuba class
-precision: 1.0000
+Computer metrics for South class
+precision: 0.4000
+recall: 0.3333
+fbeta: 0.3636
+
+Computer metrics for India class
+precision: 0.5714
 recall: 0.8000
-fbeta: 0.8889
-
-Computer metrics for Philippines class
-precision: 0.7778
-recall: 0.5385
-fbeta: 0.6364
-
-Computer metrics for Outlying-US(Guam-USVI-etc) class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Ecuador class
-precision: 1.0000
-recall: 0.5000
 fbeta: 0.6667
 
-Computer metrics for Germany class
+Computer metrics for ? class
+precision: 0.6957
+recall: 0.5517
+fbeta: 0.6154
+
+Computer metrics for Mexico class
 precision: 1.0000
-recall: 0.6667
-fbeta: 0.8000
+recall: 0.1111
+fbeta: 0.2000
 
 Computer metrics for Dominican-Republic class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for Jamaica class
-precision: 0.5000
-recall: 0.3333
-fbeta: 0.4000
+Computer metrics for Taiwan class
+precision: 1.0000
+recall: 0.7500
+fbeta: 0.8571
+
+Computer metrics for Greece class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
+Computer metrics for Cuba class
+precision: 0.7500
+recall: 0.7500
+fbeta: 0.7500
 
 Computer metrics for El-Salvador class
 precision: 1.0000
-recall: 0.6000
-fbeta: 0.7500
+recall: 1.0000
+fbeta: 1.0000
 
-Computer metrics for India class
-precision: 0.6364
-recall: 0.7778
-fbeta: 0.7000
-
-Computer metrics for Poland class
-precision: 1.0000
-recall: 0.3333
-fbeta: 0.5000
-
-Computer metrics for Japan class
-precision: 0.6667
-recall: 0.5000
-fbeta: 0.5714
-
-Computer metrics for ? class
-precision: 0.7500
-recall: 0.5172
-fbeta: 0.6122
-
-Computer metrics for Scotland class
-precision: 1.0000
-recall: 0.0000
-fbeta: 0.0000
+Computer metrics for Germany class
+precision: 0.7778
+recall: 0.4667
+fbeta: 0.5833
 
 Computer metrics for Canada class
-precision: 0.7500
-recall: 0.2727
-fbeta: 0.4000
-
-Computer metrics for South class
-precision: 0.0000
-recall: 0.0000
-fbeta: 0.0000
-
-Computer metrics for Peru class
 precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for China class
-precision: 0.6667
-recall: 0.8000
-fbeta: 0.7273
-
-Computer metrics for Taiwan class
-precision: 0.7500
-recall: 1.0000
-fbeta: 0.8571
-
-Computer metrics for France class
-precision: 1.0000
-recall: 0.5000
-fbeta: 0.6667
-
-Computer metrics for Columbia class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Haiti class
-precision: 0.0000
-recall: 1.0000
-fbeta: 0.0000
-
-Computer metrics for Portugal class
-precision: 1.0000
-recall: 0.0000
-fbeta: 0.0000
-
-Computer metrics for Nicaragua class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Cambodia class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Hong class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Guatemala class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Puerto-Rico class
-precision: 0.0000
-recall: 1.0000
-fbeta: 0.0000
+recall: 0.3750
+fbeta: 0.5455
 
 Computer metrics for Ireland class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for England class
-precision: 1.0000
-recall: 0.5000
-fbeta: 0.6667
-
-Computer metrics for Iran class
-precision: 1.0000
-recall: 0.5000
-fbeta: 0.6667
-
-Computer metrics for Italy class
-precision: 0.8000
-recall: 0.6667
-fbeta: 0.7273
-
-Computer metrics for Honduras class
+Computer metrics for Vietnam class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for Vietnam class
-precision: 0.5000
-recall: 0.3333
+Computer metrics for Jamaica class
+precision: 0.0000
+recall: 0.0000
+fbeta: 0.0000
+
+Computer metrics for Philippines class
+precision: 0.8750
+recall: 0.6364
+fbeta: 0.7368
+
+Computer metrics for France class
+precision: 1.0000
+recall: 0.2500
 fbeta: 0.4000
+
+Computer metrics for Columbia class
+precision: 0.0000
+recall: 1.0000
+fbeta: 0.0000
 
 Computer metrics for Trinadad&Tobago class
 precision: 1.0000
 recall: 0.0000
 fbeta: 0.0000
 
+Computer metrics for Italy class
+precision: 1.0000
+recall: 0.5714
+fbeta: 0.7273
+
+Computer metrics for Puerto-Rico class
+precision: 0.7500
+recall: 0.6000
+fbeta: 0.6667
+
+Computer metrics for England class
+precision: 1.0000
+recall: 0.5714
+fbeta: 0.7273
+
+Computer metrics for Cambodia class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
+Computer metrics for Japan class
+precision: 0.8571
+recall: 1.0000
+fbeta: 0.9231
+
+Computer metrics for Peru class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
+Computer metrics for Iran class
+precision: 0.5000
+recall: 1.0000
+fbeta: 0.6667
+
+Computer metrics for Guatemala class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
+Computer metrics for Portugal class
+precision: 1.0000
+recall: 0.0000
+fbeta: 0.0000
+
+Computer metrics for China class
+precision: 0.8333
+recall: 0.8333
+fbeta: 0.8333
+
+Computer metrics for Poland class
+precision: 0.5000
+recall: 0.3333
+fbeta: 0.4000
+
+Computer metrics for Nicaragua class
+precision: 0.0000
+recall: 1.0000
+fbeta: 0.0000
+
+Computer metrics for Haiti class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
+Computer metrics for Honduras class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
+Computer metrics for Ecuador class
+precision: 0.5000
+recall: 0.3333
+fbeta: 0.4000
+
+Computer metrics for Laos class
+precision: 1.0000
+recall: 0.0000
+fbeta: 0.0000
+
+Computer metrics for Outlying-US(Guam-USVI-etc) class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
 Computer metrics for Hungary class
 precision: 1.0000
 recall: 0.0000
 fbeta: 0.0000
 
-Computer metrics for Greece class
-precision: 1.0000
-recall: 0.3333
-fbeta: 0.5000
-
-Computer metrics for Yugoslavia class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
 Computer metrics for Thailand class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
+
+Computer metrics for Scotland class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
+Computer metrics for Hong class
+precision: 0.0000
+recall: 0.0000
+fbeta: 0.0000
+
+Computer metrics for Yugoslavia class
+precision: 0.5000
+recall: 1.0000
+fbeta: 0.6667
 

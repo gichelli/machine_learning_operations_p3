@@ -12,33 +12,19 @@ import pickle
 
 out_path =  'out/'
 
-def check_econder_lb(path):
+def check_econder_lb(path, model_name, encoder_name, lb_name):
     '''
     check if encoder or LabelBinarizer already exists
     input: path of obkect locations
     output: returns int that ensures both object exists in path
     '''
+    names = [model_name, encoder_name, lb_name]
     count = 0
-    if os.path.isfile(path + 'encoder.pkl'):
-        # flag
-        count += 1
-        # encoder = load_model(path + 'encoder.pkl')
-    if os.path.isfile(path + 'lb.pkl'):
-        # flag
-        count += 1
-        # lb = load_model(path + 'lb.pkl')
+    for file in names:
+        print(file)
+        if os.path.isfile(path + file):
+            count += 1
     return count
-
-
-# def get_encoder_lb(path):
-#     '''
-#     if both Encoder and LabelBinarizer are available load them
-#     input: path of object locations
-#     output: returns Encoder and LabelBinarizer
-#     '''
-#     encoder = load(path)
-#     lb = load(path)
-#     return encoder, lb
 
 
 def load(path):
@@ -47,7 +33,6 @@ def load(path):
     input: path of object locations
     output: returns object
     '''
-    # model = pickle.load(open(path, 'rb'))
     return pickle.load(open(path, 'rb'))
 
 
@@ -158,10 +143,6 @@ def compute_model_metrics(y, preds):
     fbeta = fbeta_score(y, preds, beta=1, zero_division=1)
 
     with open(out_path + 'slice_output.txt', 'a', encoding="utf8") as file:
-        # file.write('precision' + str(precision))
-        # file.write('recall' + str(recall))
-        # file.write('fbeta' + str(fbeta))
-
         file.writelines(f'precision: {precision:.4f}\n')
         file.writelines(f'recall: {recall:.4f}\n')
         file.writelines(f'fbeta: {fbeta:.4f}\n')
