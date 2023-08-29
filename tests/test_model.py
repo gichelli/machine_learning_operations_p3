@@ -102,46 +102,6 @@ def get_test_data(data_split, get_train_data):
     
 
 
-# @pytest.fixture(scope="module")
-# # def test_train_model():
-# def get_model(data, get_train_data):
-#     '''
-#     Fixture to get trained model
-#     '''
-#     # label = 'salary'
-#     # print(data.head(5))
-#     # print(data[label])
-#     # train, test = train_test_split(data, test_size=0.20)
-#     # X_train, y_train, encoder, lb = process_data(
-#     # train, categorical_features=cat_features, label="salary", training=True)
-
-#     # X_test, y_test, encoder, lb = process_data(
-#     # test, categorical_features=cat_features, label="salary", training=False, encoder=encoder, lb=lb)
-
-
-#     # X_train, y_train, encoder, lb = process_data(
-#     # split_data(data)[0], categorical_features=cat_features, label="salary", training=True
-#     # return X_train, y_train
-#     # print("ffffff")
-#     # print(get_train_data[0])
-#     # model = train_model(get_train_data[0], get_train_data[1])
-#     model = train_model(get_train_data[0], get_train_data[1])
-
-#     # return X_train, y_train, X_test, y_test, model
-#     return model
-
-
-# @pytest.fixture(scope="module")
-# def preds1():
-#     X_test, y_test, encoder, lb = process_data(
-#     split_data(data)[1], categorical_features=cat_features, label='salary', training=False, encoder=encoder, lb=lb
-# )
-#     # preds = inference(get_model, get_test_data[0])
-#     preds = inference(get_model, X_test)
-#     return preds
-
-
-#test save_model
 def test_save_model(get_train_data):
     '''
     test to see if function is saving models correctly
@@ -153,26 +113,44 @@ def test_save_model(get_train_data):
         save_model(model_sample, model_path + model_name)
        
         assert os.path.isfile(model_path + model_name)
-        logging.info(
-            "SUCCESS: Testing save_model - model have been saved in model folder")
     except AssertionError as err:
         logging.error(
             "ERROR: Testing save_model - model has not been saved in model folder")
         raise err
     
-# def test_train_model()
 
-# def test_inference(model, X):
+#  save_encoder_and_lb(model_path, encoder, lb)
+def test_save_encoder_and_lb(get_train_data):
+    '''
+    test to see if function is saving encoder and lb correctly
+    '''
+    encoder_name = '/model_sample.pkl'
+    lb_name = '/lb_sample.pkl'
+    try:
+        save_model(get_train_data[2], model_path + encoder_name)
+        assert os.path.isfile(model_path + encoder_name)
+    except AssertionError as err:
+        logging.error(
+            "ERROR: Testing test_save_encoder_and_lb - encoder has not been saved in model folder")
+        raise err
+    
+    try:
+        save_model(get_train_data[3], model_path + lb_name)
+        assert os.path.isfile(model_path + lb_name)
+    except AssertionError as err:
+        logging.error(
+            "ERROR: Testing test_save_encoder_and_lb - lb has not been saved in model folder")
+        raise err
+    
+
+
 def test_inference(data, get_model, get_test_data):
     '''
     test prediction's type
     '''
     try:
         preds = inference(get_model, get_test_data[0])
-        print(type(preds))
         assert isinstance(preds, np.ndarray)
-        print("here")
-        logging.info("SUCCESS: Testing test_inference - preds is a np.array")
     except AssertionError as err:
         logging.error(
             "ERROR: Testing test_inference - preds is not a np.array")
@@ -181,7 +159,6 @@ def test_inference(data, get_model, get_test_data):
     # test size of predictions
     try:
         assert len(preds) == get_test_data[0].shape[0]
-        logging.info("SUCCESS: Testing test_inference - preds is same size as test data")
     except AssertionError as err:
         logging.error(
             "ERROR: Testing test_inference - preds is not the same size as test data")

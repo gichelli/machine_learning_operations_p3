@@ -56,8 +56,7 @@ def save_encoder_and_lb(path, encoder, lb):
     save Encoder and LabelBinarizer
     input: path of object locations, Encoder and LabelBinarizer
     '''
-    pickle.dump(encoder, path + 'encoder.pkl', 'wb')
-    pickle.dump(lb, path + 'lb.pkl', 'wb')
+    pickle.dump(encoder, open(path, 'wb'))
 
 
 # Optional: implement hyperparameter tuning.
