@@ -119,28 +119,28 @@ def test_save_model(get_train_data):
         raise err
     
 
-# #  save_encoder_and_lb(model_path, encoder, lb)
-# def test_save_encoder_and_lb(get_train_data):
-#     '''
-#     test to see if function is saving encoder and lb correctly
-#     '''
-#     encoder_name = '/model_sample.pkl'
-#     lb_name = '/lb_sample.pkl'
-#     try:
-#         save_model(get_train_data[2], model_path + encoder_name)
-#         assert os.path.isfile(model_path + encoder_name)
-#     except AssertionError as err:
-#         logging.error(
-#             "ERROR: Testing test_save_encoder_and_lb - encoder has not been saved in model folder")
-#         raise err
+#  save_encoder_and_lb(model_path, encoder, lb)
+def test_save_encoder_and_lb(get_train_data):
+    '''
+    test to see if function is saving encoder and lb correctly
+    '''
+    encoder_name = 'encoder_sample.pkl'
+    lb_name = 'lb_sample.pkl'
+    try:
+        save_model(get_train_data[2], model_path + encoder_name)
+        assert os.path.isfile(model_path + encoder_name)
+    except AssertionError as err:
+        logging.error(
+            "ERROR: Testing test_save_encoder_and_lb - encoder has not been saved in model folder")
+        raise err
     
-#     try:
-#         save_model(get_train_data[3], model_path + lb_name)
-#         assert os.path.isfile(model_path + lb_name)
-#     except AssertionError as err:
-#         logging.error(
-#             "ERROR: Testing test_save_encoder_and_lb - lb has not been saved in model folder")
-#         raise err
+    try:
+        save_model(get_train_data[3], model_path + lb_name)
+        assert os.path.isfile(model_path + lb_name)
+    except AssertionError as err:
+        logging.error(
+            "ERROR: Testing test_save_encoder_and_lb - lb has not been saved in model folder")
+        raise err
 
 
 # def test_inference(data, get_model, get_test_data):
