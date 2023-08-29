@@ -22,7 +22,6 @@ def check_econder_lb(path, model_name, encoder_name, lb_name):
     names = [model_name, encoder_name, lb_name]
     count = 0
     for file in names:
-        print(file)
         if os.path.isfile(path + file):
             count += 1
     return count

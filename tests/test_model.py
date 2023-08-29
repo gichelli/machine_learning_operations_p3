@@ -38,7 +38,6 @@ def data():
     '''
     fixture - get dataframe
     '''
-    print(os.getcwd())
     path = 'data/census.csv'
     df = pd.read_csv(path, skipinitialspace=True)
     return df
@@ -158,15 +157,13 @@ def test_sliced_model_metrics(data_split, get_test_data, get_model, data):
 
     '''
     num_classes = len(data['workclass'].unique())
-    print(num_classes)
     try:
         assert sliced_model_metrics(
             data_split[1],
             get_test_data[0],
             get_test_data[1],
             'workclass',
-            get_model,
-            total_count=[]) == num_classes
+            get_model) == num_classes
     except AssertionError as err:
         logging.error(
             "ERROR: Testing test_sliced_model_metrics - did not run exact lenght of cat_features")
