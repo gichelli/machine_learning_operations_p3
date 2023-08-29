@@ -92,7 +92,7 @@ def save_model(model, path):
     '''
     save model in given path
     '''
-    pickle.dump(open(model, path, 'wb'))
+    pickle.dump(open("model/model.pkl", 'wb'))
 
 
 def inference(model, X):
