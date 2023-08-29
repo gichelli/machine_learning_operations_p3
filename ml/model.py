@@ -8,7 +8,7 @@ Date  : August 28, 2023
 import os
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import RandomForestClassifier
-import pickle
+import joblib
 
 out_path =  'out/'
 
@@ -47,7 +47,7 @@ def load_model(path):
     input: path of model locations
     output: returns model
     '''
-    model = pickle.load(open(path, 'rb'))
+    model = joblib.load(open(path, 'rb'))
     return model
 
 
@@ -56,8 +56,8 @@ def save_encoder_and_lb(path, encoder, lb):
     save Encoder and LabelBinarizer
     input: path of object locations, Encoder and LabelBinarizer
     '''
-    pickle.dump(encoder, path + 'encoder.pkl')
-    pickle.dump(lb, path + 'lb.pkl')
+    joblib.dump(encoder, path + 'encoder.pkl')
+    joblib.dump(lb, path + 'lb.pkl')
 
 
 # Optional: implement hyperparameter tuning.
@@ -92,7 +92,7 @@ def save_model(model, path):
     '''
     save model in given path
     '''
-    pickle.dump(model, path)
+    joblib.dump(model, path)
 
 
 def inference(model, X):
