@@ -50,7 +50,7 @@ def data():
 def get_model():
     # path = os.getcwd()
     # path = os.path.dirname(os.getcwd())
-    current_dirs_parent = os.path.dirname(os.getcwd())
+    # current_dirs_parent = os.path.dirname(os.getcwd())
     print("**********************--------------------")
     # print(path)
     # print(current_dirs_parent)
@@ -60,7 +60,7 @@ def get_model():
     print(os.getcwd())
     print("**********************--------------------")
 
-    model = load_model(model_path + 'model.pkl')
+    model = load_model(model_path + 'model_sample.pkl')
     return model
 
 @pytest.fixture(scope="session")
