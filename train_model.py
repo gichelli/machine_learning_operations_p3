@@ -51,32 +51,38 @@ logging.info('Splitting train-test data')
 train, test = train_test_split(data, test_size=0.20)
 
 # if encoder and lb exist load them, else create them
-logging.info('Checking if encoder and labelbinarizer exist')
+logging.info('Checking if model, encoder and labelbinarizer exist')
 check = check_econder_lb(model_path)
-if check == 2:
-    encoder, lb = get_encoder_lb(model_path)
+if check == 3:
+    model = load(model_path + model_name)
+    encoder= load(model_path + encoder_name)
+    lb = load(model_path + lb_name)
 else:
     X_train, y_train, encoder, lb = process_data(
         train, categorical_features=cat_features, label="salary", training=True
     )
     # save encoder and lb
-    logging.info('Saving encoder and lb')
+    logging.info('Saving model, encoder and lb')
+    model = train_model(X_train, y_train)
+    save(model, model_path + model_name)
     save(encoder, model_path + encoder_name)
     save(lb, model_path + lb_name)
 
-# if model exist get load it
-logging.info('If model exists, loading it.. else training and saving it..')
-if os.path.isfile(model_path + model_name):
-    model = load_model(model_path + model_name)
+# # if model exist get load it
+# logging.info('If model exists, loading it.. else training and saving it..')
+# if os.path.isfile(model_path + model_name):
+#     model = load(model_path + model_name)
 
-# else train and save model
-else:
-    model = train_model(X_train, y_train)
-    save(model, model_path + model_name)
+# logging.info('Checking if encoder and lb exist, if they exist loading them..')
+
+# # else train and save model
+# else:
+#     model = train_model(X_train, y_train)
+#     save(model, model_path + model_name)
 
 # load encoder and lb
-logging.info('loading encoder and lb..')
-encoder, lb = get_encoder_lb(model_path)
+# logging.info('loading encoder and lb..')
+# encoder, lb = get_encoder_lb(model_path)
 
 
 # Proces the test data with the process_data function.

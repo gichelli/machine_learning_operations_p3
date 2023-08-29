@@ -30,15 +30,15 @@ def check_econder_lb(path):
     return count
 
 
-def get_encoder_lb(path):
-    '''
-    if both Encoder and LabelBinarizer are available load them
-    input: path of object locations
-    output: returns Encoder and LabelBinarizer
-    '''
-    encoder = load_model(path + 'encoder.pkl')
-    lb = load_model(path + 'lb.pkl')
-    return encoder, lb
+# def get_encoder_lb(path):
+#     '''
+#     if both Encoder and LabelBinarizer are available load them
+#     input: path of object locations
+#     output: returns Encoder and LabelBinarizer
+#     '''
+#     encoder = load(path)
+#     lb = load(path)
+#     return encoder, lb
 
 
 def load(path):
