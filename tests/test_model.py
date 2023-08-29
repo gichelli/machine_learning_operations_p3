@@ -6,11 +6,10 @@ Date  : August 28, 2023
 '''
 # import libraries
 import os
-import sys
+import logging
 import pandas as pd
 import numpy as np
 import pytest
-import logging
 from sklearn.model_selection import train_test_split
 from ml.model import train_model, inference, save, load, sliced_model_metrics
 from ml.data import process_data
@@ -81,8 +80,8 @@ def get_test_data(data_split, get_train_data):
     '''
     Return tested data
     '''
-    X_test, y_test, encoder, lb = process_data(
-        data_split[1], categorical_features=cat_features, label="salary", training=False, encoder=get_train_data[2], lb=get_train_data[3])
+    X_test, y_test, encoder, lb = process_data(data_split[1], categorical_features=cat_features,
+                label="salary", training=False, encoder=get_train_data[2], lb=get_train_data[3])
 
     return X_test, y_test
 
@@ -130,7 +129,7 @@ def test_load():
         raise err
 
 
-def test_inference(data, get_model, get_test_data):
+def test_inference(get_model, get_test_data):
     '''
     test prediction's type
     '''
@@ -182,6 +181,6 @@ def test_compute_model_metrics():
     try:
         assert os.stat(out_path + 'slice_output.txt').st_size != 0
     except AssertionError as err:
-        logging.error(
-            "ERROR: Testing test_compute_model_metrics - there is not a file named slice_output.txt in out folder")
+        logging.error("ERROR: Testing test_compute_model_metrics - there is not "
+                    + "a file named slice_output.txt in out folder")
         raise err

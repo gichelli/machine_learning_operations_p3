@@ -5,10 +5,12 @@ Author: Gissella Gonzalez
 Date  : August 28, 2023
 '''
 # import libraries
-import os, logging
+import os
+import logging
 from sklearn.model_selection import train_test_split
 import pandas as pd
-from ml.model import *
+from ml.model import (check_econder_lb, load, save, inference, train_model,
+                      sliced_model_metrics, compute_model_metrics)
 from ml.data import process_data
 
 
@@ -53,13 +55,10 @@ train, test = train_test_split(data, test_size=0.20)
 # if encoder and lb exist load them, else create them
 logging.info('Checking if model, encoder and labelbinarizer exist')
 check = check_econder_lb(model_path, model_name, encoder_name, lb_name)
-print("------**************here**********")
 print(check)
 if check == 3:
-    print("**************here**********")
-    print(check)
     model = load(model_path + model_name)
-    encoder= load(model_path + encoder_name)
+    encoder = load(model_path + encoder_name)
     lb = load(model_path + lb_name)
 else:
     X_train, y_train, encoder, lb = process_data(
@@ -71,22 +70,6 @@ else:
     save(model, model_path + model_name)
     save(encoder, model_path + encoder_name)
     save(lb, model_path + lb_name)
-
-# # if model exist get load it
-# logging.info('If model exists, loading it.. else training and saving it..')
-# if os.path.isfile(model_path + model_name):
-#     model = load(model_path + model_name)
-
-# logging.info('Checking if encoder and lb exist, if they exist loading them..')
-
-# # else train and save model
-# else:
-#     model = train_model(X_train, y_train)
-#     save(model, model_path + model_name)
-
-# load encoder and lb
-# logging.info('loading encoder and lb..')
-# encoder, lb = get_encoder_lb(model_path)
 
 
 # Proces the test data with the process_data function.
@@ -111,11 +94,11 @@ compute_model_metrics(y_test, preds)
 # print(matrix)
 
 logging.info('Computing metrics for each categorical column slice..')
-'''
-compute metrics for each slice total 8, cat cols
-workclass below should be passed as a list such as cat_features
-sliced_model_metrics(test, X_test, y_test, 'workclass', model)
-'''
+
+# compute metrics for each slice total 8, cat cols
+# workclass below should be passed as a list such as cat_features
+# sliced_model_metrics(test, X_test, y_test, 'workclass', model)
+
 out_path = 'out/'
 if os.path.isfile(out_path + 'slice_output.txt'):
     os.remove(out_path + 'slice_output.txt')

@@ -6,11 +6,12 @@ Date  : August 28, 2023
 '''
 # import libraries
 import os
+import pickle
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import RandomForestClassifier
-import pickle
 
-out_path =  'out/'
+
+out_path = 'out/'
 
 def check_econder_lb(path, model_name, encoder_name, lb_name):
     '''
@@ -91,7 +92,7 @@ def inference(model, X):
     return preds
 
 
-def sliced_model_metrics(df, X_test, y_test, feature, model, total_count = []):
+def sliced_model_metrics(df, X_test, y_test, feature, model):
     '''
     Function to compute model metrics on slices of the dataset
     input:
@@ -109,7 +110,7 @@ def sliced_model_metrics(df, X_test, y_test, feature, model, total_count = []):
         file.write('\n')
 
     for cls in df[feature].unique():
-        count+=1
+        count += 1
         row_slice = df[feature] == cls
         preds = inference(model, X_test[row_slice])
 
@@ -118,7 +119,6 @@ def sliced_model_metrics(df, X_test, y_test, feature, model, total_count = []):
 
         compute_model_metrics(y_test[row_slice], preds)
     return count
-
 
 
 def compute_model_metrics(y, preds):
