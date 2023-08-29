@@ -39,6 +39,9 @@ cat_features = [
 
 # path to model, encoder and lb
 model_path = 'model/'
+model_name = 'model.pkl'
+encoder_name = 'encoder.pkl'
+lb_name = 'lb.pkl'
 
 logging.info('Creating dataframe')
 data = pd.read_csv("data/census.csv", skipinitialspace=True)
@@ -58,17 +61,18 @@ else:
     )
     # save encoder and lb
     logging.info('Saving encoder and lb')
-    save_encoder_and_lb(model_path, encoder, lb)
+    save(encoder, model_path + encoder_name)
+    save(lb, model_path + lb_name)
 
 # if model exist get load it
 logging.info('If model exists, loading it.. else training and saving it..')
-if os.path.isfile(model_path + 'model.pkl'):
-    model = load_model(model_path + 'model.pkl')
+if os.path.isfile(model_path + model_name):
+    model = load_model(model_path + model_name)
 
 # else train and save model
 else:
     model = train_model(X_train, y_train)
-    save_model(model, model_path + 'model.pkl')
+    save(model, model_path + model_name)
 
 # load encoder and lb
 logging.info('loading encoder and lb..')
@@ -77,7 +81,7 @@ encoder, lb = get_encoder_lb(model_path)
 
 # Proces the test data with the process_data function.
 # encoder OneHotEncoder, only used if training=False.
-logging.info('precessing test data..')
+logging.info('processing test data..')
 X_test, y_test, encoder, lb = process_data(
     test, categorical_features=cat_features, label='salary', training=False, encoder=encoder, lb=lb
 )

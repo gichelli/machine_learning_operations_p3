@@ -41,22 +41,14 @@ def get_encoder_lb(path):
     return encoder, lb
 
 
-def load_model(path):
+def load(path):
     '''
-    load model from path
-    input: path of model locations
-    output: returns model
+    load object from path
+    input: path of object locations
+    output: returns object
     '''
-    model = pickle.load(open(path, 'rb'))
-    return model
-
-
-def save_encoder_and_lb(path, encoder, lb):
-    '''
-    save Encoder and LabelBinarizer
-    input: path of object locations, Encoder and LabelBinarizer
-    '''
-    pickle.dump(encoder, open(path, 'wb'))
+    # model = pickle.load(open(path, 'rb'))
+    return pickle.load(open(path, 'rb'))
 
 
 # Optional: implement hyperparameter tuning.
@@ -86,12 +78,14 @@ def train_model(X_train, y_train):
     return rfc
 
 
-# save the model
-def save_model(model, path):
+# save objects
+def save(obj, path):
     '''
-    save model in given path
+    save obj in given path
+    input: path of object locations
+
     '''
-    pickle.dump(model, open(path, 'wb'))
+    pickle.dump(obj, open(path, 'wb'))
 
 
 def inference(model, X):

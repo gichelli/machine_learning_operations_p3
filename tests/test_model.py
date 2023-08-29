@@ -8,9 +8,9 @@ import sys
 print(os.getcwd())
 sys.path.append('..')
 print(os.getcwd())
-print(sys.path)
+# print(sys.path)
 from ml.data import process_data
-from ml.model import train_model, inference, save_model, load_model, sliced_model_metrics
+from ml.model import train_model, inference, save, load, sliced_model_metrics
 
 # path = os.path.dirname(os.getcwd())
 
@@ -23,6 +23,9 @@ from ml.model import train_model, inference, save_model, load_model, sliced_mode
 # )
 model_path = 'model/'
 out_path = 'out/'
+model_name = 'model_sample.pkl'
+encoder_name = 'encoder_sample.pkl'
+lb_name = 'lb_sample.pkl'
 
 cat_features = [
     "workclass",
@@ -58,7 +61,7 @@ def get_model():
     print(os.getcwd())
     print("**********************--------------------")
 
-    model = load_model(model_path + 'model_sample.pkl')
+    model = load(model_path + model_name)
     return model
 
 @pytest.fixture(scope="session")
@@ -102,45 +105,50 @@ def get_test_data(data_split, get_train_data):
     return X_test, y_test
 
 
-def test_save_model(get_train_data):
+def test_save(get_train_data):
     '''
     test to see if function is saving models correctly
     '''
-
-    try:
-        model_name = 'model_sample.pkl'
+    try:     
         model_sample = train_model(get_train_data[0], get_train_data[1])
-        save_model(model_sample, model_path + model_name)
-       
+        save(model_sample, model_path + model_name)
         assert os.path.isfile(model_path + model_name)
     except AssertionError as err:
         logging.error(
-            "ERROR: Testing save_model - model has not been saved in model folder")
+            "ERROR: Testing test_save - model has not been saved in model folder")
         raise err
     
-
-#  save_encoder_and_lb(model_path, encoder, lb)
-def test_save_encoder_and_lb(get_train_data):
-    '''
-    test to see if function is saving encoder and lb correctly
-    '''
-    encoder_name = 'encoder_sample.pkl'
-    lb_name = 'lb_sample.pkl'
     try:
-        save_model(get_train_data[2], model_path + encoder_name)
+        save(get_train_data[2], model_path + encoder_name)
         assert os.path.isfile(model_path + encoder_name)
     except AssertionError as err:
         logging.error(
-            "ERROR: Testing test_save_encoder_and_lb - encoder has not been saved in model folder")
+            "ERROR: Testing test_save - encoder has not been saved in model folder")
         raise err
     
     try:
-        save_model(get_train_data[3], model_path + lb_name)
+        save(get_train_data[3], model_path + lb_name)
         assert os.path.isfile(model_path + lb_name)
     except AssertionError as err:
         logging.error(
-            "ERROR: Testing test_save_encoder_and_lb - lb has not been saved in model folder")
+            "ERROR: Testing test_save - lb has not been saved in model folder")
         raise err
+    
+
+
+def test_load():
+    '''
+    test loading encoder and lb is working as expected
+    '''
+    try:
+        if os.path.isfile(model_path + model_name):
+            assert load(model_path + model_name)
+    except AssertionError as err:
+        logging.error(
+            "ERROR: Testing test_load - lb has not loaded properly")
+        raise err  
+        
+
 
 
 # def test_inference(data, get_model, get_test_data):
