@@ -156,13 +156,13 @@ def test_sliced_model_metrics(data_split, get_test_data, get_model, data):
     number of unique classes in each feature
 
     '''
-    num_classes = len(data['workclass'].unique())
+    num_classes = len(data['relationship'].unique())
     try:
         assert sliced_model_metrics(
             data_split[1],
             get_test_data[0],
             get_test_data[1],
-            'workclass',
+            'relationship',
             get_model) == num_classes
     except AssertionError as err:
         logging.error(
