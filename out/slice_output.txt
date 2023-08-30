@@ -1015,3 +1015,96 @@ precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
+####################################################
+Performance metrics for workclass slice:
+####################################################
+
+Computer metrics for Private class
+precision: 0.8056
+recall: 0.4797
+fbeta: 0.6014
+
+Computer metrics for State-gov class
+precision: 0.7059
+recall: 0.7869
+fbeta: 0.7442
+
+Computer metrics for Self-emp-inc class
+precision: 0.8690
+recall: 0.6822
+fbeta: 0.7644
+
+Computer metrics for Self-emp-not-inc class
+precision: 0.7041
+recall: 0.5702
+fbeta: 0.6301
+
+Computer metrics for Local-gov class
+precision: 0.6813
+recall: 0.5391
+fbeta: 0.6019
+
+Computer metrics for ? class
+precision: 0.6818
+recall: 0.4054
+fbeta: 0.5085
+
+Computer metrics for Federal-gov class
+precision: 0.8537
+recall: 0.4268
+fbeta: 0.5691
+
+Computer metrics for Without-pay class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
+####################################################
+Performance metrics for workclass slice:
+####################################################
+
+Computer metrics for Federal-gov class
+precision: 0.8298
+recall: 0.5065
+fbeta: 0.6290
+
+Computer metrics for ? class
+precision: 0.5000
+recall: 0.2432
+fbeta: 0.3273
+
+Computer metrics for Private class
+precision: 0.8210
+recall: 0.5011
+fbeta: 0.6223
+
+Computer metrics for Self-emp-inc class
+precision: 0.8462
+recall: 0.6417
+fbeta: 0.7299
+
+Computer metrics for Local-gov class
+precision: 0.7961
+recall: 0.6165
+fbeta: 0.6949
+
+Computer metrics for Self-emp-not-inc class
+precision: 0.7107
+recall: 0.5772
+fbeta: 0.6370
+
+Computer metrics for State-gov class
+precision: 0.8387
+recall: 0.7027
+fbeta: 0.7647
+
+Computer metrics for Never-worked class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
+Computer metrics for Without-pay class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+

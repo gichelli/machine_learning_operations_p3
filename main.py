@@ -21,7 +21,7 @@ app = FastAPI(
 # Define a GET for the specified endpoint
 @app.get('/')
 async def greet():
-    return {'greeting': 'Greetings from my API!'}
+    return 'Greetings from my API!'
 
 
 
