@@ -8,10 +8,16 @@ client = TestClient(app)
 
 # test get
 
-def test_get_greeting():
+def test_get_greet_success():
     r = client.get('/')
-    print("**********************")
-    print(r.status_code)
+    assert r.status_code == 200
+    assert r.json() == 'Greetings from my API!'
+
+
+    # def test_get_greet_success():
+    # r = client.get('/')
+    # print("**********************")
+    # print(r.status_code)
     # assert r.status_code == 200
     # assert r.json() == 'Greetings from my API!'
     
