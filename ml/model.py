@@ -7,11 +7,20 @@ Date  : August 28, 2023
 # import libraries
 import os
 import pickle
+from ml.data import process_data
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import RandomForestClassifier
 
 
 out_path = 'out/'
+
+def split_and_process_data(train, cat_features, label, training):
+    X, y, encoder, lb = process_data(
+        train, cat_features, label, training
+    )
+
+    return X, y, encoder, lb
+
 
 def check_econder_lb(path, model_name, encoder_name, lb_name):
     '''

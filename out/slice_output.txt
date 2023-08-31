@@ -3,46 +3,41 @@ Performance metrics for workclass slice:
 ####################################################
 
 Computer metrics for Private class
-precision: 0.8168
-recall: 0.4802
-fbeta: 0.6049
-
-Computer metrics for Local-gov class
-precision: 0.7333
-recall: 0.5641
-fbeta: 0.6377
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.7593
-recall: 0.5125
-fbeta: 0.6119
+precision: 0.8172
+recall: 0.5135
+fbeta: 0.6307
 
 Computer metrics for State-gov class
-precision: 0.8136
-recall: 0.6761
-fbeta: 0.7385
+precision: 0.7538
+recall: 0.6712
+fbeta: 0.7101
 
-Computer metrics for ? class
-precision: 0.8125
-recall: 0.3250
-fbeta: 0.4643
+Computer metrics for Self-emp-not-inc class
+precision: 0.6852
+recall: 0.4713
+fbeta: 0.5585
 
 Computer metrics for Self-emp-inc class
-precision: 0.7963
-recall: 0.6277
-fbeta: 0.7020
+precision: 0.8400
+recall: 0.7119
+fbeta: 0.7706
 
 Computer metrics for Federal-gov class
-precision: 0.8250
-recall: 0.4783
-fbeta: 0.6055
+precision: 0.8571
+recall: 0.5143
+fbeta: 0.6429
+
+Computer metrics for Local-gov class
+precision: 0.7442
+recall: 0.5818
+fbeta: 0.6531
+
+Computer metrics for ? class
+precision: 0.6500
+recall: 0.3095
+fbeta: 0.4194
 
 Computer metrics for Without-pay class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Never-worked class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
@@ -51,195 +46,200 @@ fbeta: 1.0000
 Performance metrics for education slice:
 ####################################################
 
-Computer metrics for 12th class
-precision: 1.0000
-recall: 0.1000
-fbeta: 0.1818
-
-Computer metrics for Masters class
-precision: 0.8279
-recall: 0.8641
-fbeta: 0.8456
+Computer metrics for Some-college class
+precision: 0.8367
+recall: 0.2960
+fbeta: 0.4373
 
 Computer metrics for HS-grad class
-precision: 0.9508
-recall: 0.1625
-fbeta: 0.2775
+precision: 1.0000
+recall: 0.1565
+fbeta: 0.2707
 
 Computer metrics for Bachelors class
-precision: 0.7125
-recall: 0.7935
-fbeta: 0.7508
+precision: 0.7336
+recall: 0.7956
+fbeta: 0.7633
 
-Computer metrics for Some-college class
-precision: 0.9452
-recall: 0.2575
-fbeta: 0.4047
+Computer metrics for Masters class
+precision: 0.7945
+recall: 0.8406
+fbeta: 0.8169
 
-Computer metrics for Assoc-voc class
-precision: 0.9167
-recall: 0.2750
-fbeta: 0.4231
-
-Computer metrics for Doctorate class
-precision: 0.8654
-recall: 0.7759
-fbeta: 0.8182
+Computer metrics for Assoc-acdm class
+precision: 0.9474
+recall: 0.3830
+fbeta: 0.5455
 
 Computer metrics for 7th-8th class
 precision: 1.0000
-recall: 0.0909
-fbeta: 0.1667
+recall: 0.0000
+fbeta: 0.0000
+
+Computer metrics for 11th class
+precision: 1.0000
+recall: 0.2727
+fbeta: 0.4286
+
+Computer metrics for Assoc-voc class
+precision: 0.9524
+recall: 0.3175
+fbeta: 0.4762
+
+Computer metrics for Prof-school class
+precision: 0.8391
+recall: 0.8690
+fbeta: 0.8538
+
+Computer metrics for 9th class
+precision: 1.0000
+recall: 0.3333
+fbeta: 0.5000
+
+Computer metrics for 5th-6th class
+precision: 1.0000
+recall: 0.5000
+fbeta: 0.6667
+
+Computer metrics for 10th class
+precision: 1.0000
+recall: 0.0833
+fbeta: 0.1538
+
+Computer metrics for Doctorate class
+precision: 0.8364
+recall: 0.8070
+fbeta: 0.8214
+
+Computer metrics for 12th class
+precision: 1.0000
+recall: 0.4000
+fbeta: 0.5714
+
+Computer metrics for 1st-4th class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
 
 Computer metrics for Preschool class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for 10th class
-precision: 1.0000
-recall: 0.1667
-fbeta: 0.2857
-
-Computer metrics for 11th class
-precision: 1.0000
-recall: 0.3333
-fbeta: 0.5000
-
-Computer metrics for Assoc-acdm class
-precision: 0.8750
-recall: 0.2642
-fbeta: 0.4058
-
-Computer metrics for 9th class
-precision: 1.0000
-recall: 0.0000
-fbeta: 0.0000
-
-Computer metrics for Prof-school class
-precision: 0.8941
-recall: 0.8261
-fbeta: 0.8588
-
-Computer metrics for 1st-4th class
-precision: 1.0000
-recall: 0.0000
-fbeta: 0.0000
-
-Computer metrics for 5th-6th class
-precision: 1.0000
-recall: 0.2857
-fbeta: 0.4444
-
 ####################################################
-Performance metrics for marital-status slice:
+Performance metrics for marital_status slice:
 ####################################################
-
-Computer metrics for Never-married class
-precision: 1.0000
-recall: 0.2396
-fbeta: 0.3866
-
-Computer metrics for Married-civ-spouse class
-precision: 0.7905
-recall: 0.5550
-fbeta: 0.6521
 
 Computer metrics for Divorced class
 precision: 1.0000
-recall: 0.2121
-fbeta: 0.3500
+recall: 0.2524
+fbeta: 0.4031
+
+Computer metrics for Married-civ-spouse class
+precision: 0.7825
+recall: 0.5904
+fbeta: 0.6730
+
+Computer metrics for Never-married class
+precision: 1.0000
+recall: 0.2233
+fbeta: 0.3651
 
 Computer metrics for Separated class
 precision: 1.0000
-recall: 0.2308
-fbeta: 0.3750
+recall: 0.2632
+fbeta: 0.4167
 
 Computer metrics for Widowed class
 precision: 1.0000
-recall: 0.2500
-fbeta: 0.4000
+recall: 0.1053
+fbeta: 0.1905
 
 Computer metrics for Married-spouse-absent class
 precision: 1.0000
-recall: 0.0000
-fbeta: 0.0000
+recall: 0.1250
+fbeta: 0.2222
 
 Computer metrics for Married-AF-spouse class
 precision: 1.0000
-recall: 0.5000
-fbeta: 0.6667
+recall: 0.0000
+fbeta: 0.0000
 
 ####################################################
 Performance metrics for occupation slice:
 ####################################################
 
-Computer metrics for Other-service class
-precision: 0.0000
-recall: 0.0000
-fbeta: 0.0000
+Computer metrics for Adm-clerical class
+precision: 0.7143
+recall: 0.3125
+fbeta: 0.4348
 
 Computer metrics for Exec-managerial class
-precision: 0.8393
-recall: 0.6790
-fbeta: 0.7507
-
-Computer metrics for Adm-clerical class
-precision: 0.9302
-recall: 0.3883
-fbeta: 0.5479
+precision: 0.8297
+recall: 0.6751
+fbeta: 0.7444
 
 Computer metrics for Machine-op-inspct class
-precision: 0.5556
-recall: 0.1163
-fbeta: 0.1923
-
-Computer metrics for Handlers-cleaners class
-precision: 0.6000
-recall: 0.1364
-fbeta: 0.2222
-
-Computer metrics for Prof-specialty class
-precision: 0.7948
-recall: 0.7650
-fbeta: 0.7796
-
-Computer metrics for Sales class
-precision: 0.7578
-recall: 0.4802
-fbeta: 0.5879
-
-Computer metrics for Tech-support class
-precision: 0.7727
-recall: 0.3148
-fbeta: 0.4474
-
-Computer metrics for Farming-fishing class
-precision: 0.5000
-recall: 0.2857
-fbeta: 0.3636
-
-Computer metrics for ? class
-precision: 0.8125
-recall: 0.3250
-fbeta: 0.4643
+precision: 0.7333
+recall: 0.2340
+fbeta: 0.3548
 
 Computer metrics for Craft-repair class
-precision: 0.7719
-recall: 0.2178
-fbeta: 0.3398
+precision: 0.8125
+recall: 0.2873
+fbeta: 0.4245
+
+Computer metrics for Prof-specialty class
+precision: 0.7951
+recall: 0.7526
+fbeta: 0.7733
+
+Computer metrics for Sales class
+precision: 0.7863
+recall: 0.5365
+fbeta: 0.6378
+
+Computer metrics for Handlers-cleaners class
+precision: 0.5000
+recall: 0.3333
+fbeta: 0.4000
+
+Computer metrics for Other-service class
+precision: 1.0000
+recall: 0.1923
+fbeta: 0.3226
 
 Computer metrics for Protective-serv class
-precision: 0.8947
-recall: 0.3778
-fbeta: 0.5312
-
-Computer metrics for Transport-moving class
-precision: 0.7143
-recall: 0.1449
-fbeta: 0.2410
+precision: 0.6667
+recall: 0.2381
+fbeta: 0.3509
 
 Computer metrics for Priv-house-serv class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
+Computer metrics for Transport-moving class
+precision: 0.7727
+recall: 0.2656
+fbeta: 0.3953
+
+Computer metrics for ? class
+precision: 0.6500
+recall: 0.3095
+fbeta: 0.4194
+
+Computer metrics for Farming-fishing class
+precision: 0.5385
+recall: 0.2500
+fbeta: 0.3415
+
+Computer metrics for Tech-support class
+precision: 0.9000
+recall: 0.3529
+fbeta: 0.5070
+
+Computer metrics for Armed-Forces class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
@@ -250,232 +250,157 @@ Performance metrics for relationship slice:
 
 Computer metrics for Not-in-family class
 precision: 1.0000
-recall: 0.2265
-fbeta: 0.3694
+recall: 0.2447
+fbeta: 0.3932
 
-Computer metrics for Own-child class
-precision: 1.0000
-recall: 0.3333
-fbeta: 0.5000
+Computer metrics for Wife class
+precision: 0.8272
+recall: 0.4685
+fbeta: 0.5982
 
 Computer metrics for Husband class
-precision: 0.7790
-recall: 0.5602
-fbeta: 0.6517
+precision: 0.7791
+recall: 0.6060
+fbeta: 0.6817
 
 Computer metrics for Unmarried class
 precision: 1.0000
-recall: 0.2051
-fbeta: 0.3404
+recall: 0.1556
+fbeta: 0.2692
 
-Computer metrics for Wife class
-precision: 0.9059
-recall: 0.5238
-fbeta: 0.6638
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.1765
+fbeta: 0.3000
 
 Computer metrics for Other-relative class
-precision: 1.0000
-recall: 0.0000
-fbeta: 0.0000
+precision: 0.6667
+recall: 0.2500
+fbeta: 0.3636
 
 ####################################################
 Performance metrics for race slice:
 ####################################################
 
 Computer metrics for White class
-precision: 0.8100
-recall: 0.5096
-fbeta: 0.6256
-
-Computer metrics for Asian-Pac-Islander class
-precision: 0.6731
-recall: 0.6250
-fbeta: 0.6481
+precision: 0.7964
+recall: 0.5231
+fbeta: 0.6314
 
 Computer metrics for Black class
-precision: 0.8056
-recall: 0.3625
-fbeta: 0.5000
+precision: 0.8250
+recall: 0.5077
+fbeta: 0.6286
 
 Computer metrics for Other class
-precision: 0.6250
-recall: 0.6250
-fbeta: 0.6250
+precision: 0.6000
+recall: 0.5000
+fbeta: 0.5455
+
+Computer metrics for Asian-Pac-Islander class
+precision: 0.7541
+recall: 0.7419
+fbeta: 0.7480
 
 Computer metrics for Amer-Indian-Eskimo class
-precision: 0.7500
+precision: 0.8333
 recall: 0.5000
-fbeta: 0.6000
+fbeta: 0.6250
 
 ####################################################
 Performance metrics for sex slice:
 ####################################################
 
-Computer metrics for Male class
-precision: 0.7868
-recall: 0.5230
-fbeta: 0.6283
-
 Computer metrics for Female class
-precision: 0.9245
-recall: 0.4135
-fbeta: 0.5714
+precision: 0.8511
+recall: 0.3433
+fbeta: 0.4893
+
+Computer metrics for Male class
+precision: 0.7887
+recall: 0.5635
+fbeta: 0.6574
 
 ####################################################
-Performance metrics for native-country slice:
+Performance metrics for native_country slice:
 ####################################################
 
 Computer metrics for United-States class
-precision: 0.8113
-recall: 0.5031
-fbeta: 0.6211
-
-Computer metrics for South class
-precision: 0.4000
-recall: 0.3333
-fbeta: 0.3636
-
-Computer metrics for India class
-precision: 0.5714
-recall: 0.8000
-fbeta: 0.6667
-
-Computer metrics for ? class
-precision: 0.6957
-recall: 0.5517
-fbeta: 0.6154
+precision: 0.8000
+recall: 0.5157
+fbeta: 0.6271
 
 Computer metrics for Mexico class
 precision: 1.0000
-recall: 0.1111
-fbeta: 0.2000
+recall: 0.3333
+fbeta: 0.5000
 
-Computer metrics for Dominican-Republic class
+Computer metrics for Puerto-Rico class
 precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Taiwan class
-precision: 1.0000
-recall: 0.7500
-fbeta: 0.8571
-
-Computer metrics for Greece class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Cuba class
-precision: 0.7500
-recall: 0.7500
-fbeta: 0.7500
+recall: 0.6667
+fbeta: 0.8000
 
 Computer metrics for El-Salvador class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for Germany class
-precision: 0.7778
-recall: 0.4667
-fbeta: 0.5833
-
-Computer metrics for Canada class
-precision: 1.0000
-recall: 0.3750
-fbeta: 0.5455
-
-Computer metrics for Ireland class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Vietnam class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Jamaica class
-precision: 0.0000
-recall: 0.0000
-fbeta: 0.0000
-
-Computer metrics for Philippines class
-precision: 0.8750
-recall: 0.6364
-fbeta: 0.7368
-
-Computer metrics for France class
-precision: 1.0000
-recall: 0.2500
-fbeta: 0.4000
+Computer metrics for ? class
+precision: 0.7000
+recall: 0.6774
+fbeta: 0.6885
 
 Computer metrics for Columbia class
-precision: 0.0000
+precision: 1.0000
 recall: 1.0000
-fbeta: 0.0000
+fbeta: 1.0000
 
-Computer metrics for Trinadad&Tobago class
-precision: 1.0000
-recall: 0.0000
-fbeta: 0.0000
-
-Computer metrics for Italy class
-precision: 1.0000
-recall: 0.5714
-fbeta: 0.7273
-
-Computer metrics for Puerto-Rico class
-precision: 0.7500
-recall: 0.6000
-fbeta: 0.6667
-
-Computer metrics for England class
-precision: 1.0000
-recall: 0.5714
-fbeta: 0.7273
+Computer metrics for Poland class
+precision: 0.3333
+recall: 0.5000
+fbeta: 0.4000
 
 Computer metrics for Cambodia class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for Japan class
-precision: 0.8571
-recall: 1.0000
-fbeta: 0.9231
+Computer metrics for Germany class
+precision: 0.8000
+recall: 0.6154
+fbeta: 0.6957
 
-Computer metrics for Peru class
+Computer metrics for Philippines class
 precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
+recall: 0.6875
+fbeta: 0.8148
 
-Computer metrics for Iran class
-precision: 0.5000
-recall: 1.0000
+Computer metrics for Canada class
+precision: 0.6250
+recall: 0.6250
+fbeta: 0.6250
+
+Computer metrics for Ecuador class
+precision: 1.0000
+recall: 0.5000
 fbeta: 0.6667
 
-Computer metrics for Guatemala class
+Computer metrics for Italy class
+precision: 0.7500
+recall: 0.7500
+fbeta: 0.7500
+
+Computer metrics for Cuba class
 precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
+recall: 0.8000
+fbeta: 0.8889
 
-Computer metrics for Portugal class
-precision: 1.0000
-recall: 0.0000
-fbeta: 0.0000
+Computer metrics for Iran class
+precision: 0.6000
+recall: 0.6000
+fbeta: 0.6000
 
-Computer metrics for China class
-precision: 0.8333
-recall: 0.8333
-fbeta: 0.8333
-
-Computer metrics for Poland class
-precision: 0.5000
-recall: 0.3333
-fbeta: 0.4000
-
-Computer metrics for Nicaragua class
+Computer metrics for Jamaica class
 precision: 0.0000
 recall: 1.0000
 fbeta: 0.0000
@@ -485,625 +410,117 @@ precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for Honduras class
+Computer metrics for South class
+precision: 0.2500
+recall: 0.5000
+fbeta: 0.3333
+
+Computer metrics for Taiwan class
+precision: 0.6667
+recall: 1.0000
+fbeta: 0.8000
+
+Computer metrics for Dominican-Republic class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for Ecuador class
-precision: 0.5000
-recall: 0.3333
-fbeta: 0.4000
-
-Computer metrics for Laos class
+Computer metrics for Ireland class
 precision: 1.0000
 recall: 0.0000
 fbeta: 0.0000
 
-Computer metrics for Outlying-US(Guam-USVI-etc) class
+Computer metrics for Japan class
 precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Hungary class
-precision: 1.0000
-recall: 0.0000
-fbeta: 0.0000
-
-Computer metrics for Thailand class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
+recall: 0.7500
+fbeta: 0.8571
 
 Computer metrics for Scotland class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for Hong class
-precision: 0.0000
+Computer metrics for India class
+precision: 0.7778
+recall: 0.8750
+fbeta: 0.8235
+
+Computer metrics for Trinadad&Tobago class
+precision: 1.0000
+recall: 1.0000
+fbeta: 1.0000
+
+Computer metrics for Hungary class
+precision: 1.0000
+recall: 0.5000
+fbeta: 0.6667
+
+Computer metrics for England class
+precision: 0.7500
+recall: 0.7500
+fbeta: 0.7500
+
+Computer metrics for Laos class
+precision: 1.0000
 recall: 0.0000
 fbeta: 0.0000
 
-Computer metrics for Yugoslavia class
+Computer metrics for Hong class
 precision: 0.5000
 recall: 1.0000
 fbeta: 0.6667
 
-####################################################
-Performance metrics for workclass slice:
-####################################################
-
-Computer metrics for Private class
-precision: 0.8028
-recall: 0.5089
-fbeta: 0.6229
-
-Computer metrics for Local-gov class
-precision: 0.7234
-recall: 0.5484
-fbeta: 0.6239
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.7579
-recall: 0.5625
-fbeta: 0.6457
-
-Computer metrics for Self-emp-inc class
-precision: 0.7547
-recall: 0.7207
-fbeta: 0.7373
-
-Computer metrics for State-gov class
-precision: 0.7833
-recall: 0.6912
-fbeta: 0.7344
-
-Computer metrics for ? class
-precision: 0.6429
-recall: 0.2812
-fbeta: 0.3913
-
-Computer metrics for Federal-gov class
-precision: 0.7955
-recall: 0.4375
-fbeta: 0.5645
-
-Computer metrics for Never-worked class
+Computer metrics for Greece class
 precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Without-pay class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-####################################################
-Performance metrics for workclass slice:
-####################################################
-
-Computer metrics for Federal-gov class
-precision: 0.9231
-recall: 0.5806
-fbeta: 0.7129
-
-Computer metrics for Private class
-precision: 0.8124
-recall: 0.5220
-fbeta: 0.6356
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.6698
-recall: 0.4897
-fbeta: 0.5657
-
-Computer metrics for State-gov class
-precision: 0.7971
-recall: 0.6790
-fbeta: 0.7333
-
-Computer metrics for ? class
-precision: 0.7391
-recall: 0.3778
-fbeta: 0.5000
-
-Computer metrics for Self-emp-inc class
-precision: 0.8774
-recall: 0.6992
-fbeta: 0.7782
-
-Computer metrics for Local-gov class
-precision: 0.7593
-recall: 0.5857
-fbeta: 0.6613
-
-Computer metrics for Without-pay class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Never-worked class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-####################################################
-Performance metrics for workclass slice:
-####################################################
-
-Computer metrics for Private class
-precision: 0.8221
-recall: 0.5025
-fbeta: 0.6238
-
-Computer metrics for Self-emp-inc class
-precision: 0.8280
-recall: 0.6160
-fbeta: 0.7064
-
-Computer metrics for State-gov class
-precision: 0.7857
-recall: 0.6875
-fbeta: 0.7333
-
-Computer metrics for Local-gov class
-precision: 0.7383
-recall: 0.5766
-fbeta: 0.6475
-
-Computer metrics for ? class
-precision: 0.7500
-recall: 0.3571
-fbeta: 0.4839
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.7311
-recall: 0.5541
-fbeta: 0.6304
-
-Computer metrics for Federal-gov class
-precision: 0.7885
-recall: 0.4505
-fbeta: 0.5734
-
-Computer metrics for Without-pay class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Never-worked class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-####################################################
-Performance metrics for workclass slice:
-####################################################
-
-Computer metrics for Private class
-precision: 0.8113
-recall: 0.4792
-fbeta: 0.6025
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.7391
-recall: 0.5231
-fbeta: 0.6126
-
-Computer metrics for State-gov class
-precision: 0.8596
-recall: 0.6712
-fbeta: 0.7538
-
-Computer metrics for ? class
-precision: 0.8333
-recall: 0.3947
-fbeta: 0.5357
-
-Computer metrics for Self-emp-inc class
-precision: 0.8737
-recall: 0.6860
-fbeta: 0.7685
-
-Computer metrics for Federal-gov class
-precision: 0.7609
-recall: 0.4930
-fbeta: 0.5983
-
-Computer metrics for Local-gov class
-precision: 0.7356
-recall: 0.5378
-fbeta: 0.6214
-
-Computer metrics for Without-pay class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Never-worked class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-####################################################
-Performance metrics for workclass slice:
-####################################################
-
-Computer metrics for Private class
-precision: 0.8016
-recall: 0.5137
-fbeta: 0.6261
-
-Computer metrics for Self-emp-inc class
-precision: 0.8654
-recall: 0.7200
-fbeta: 0.7860
-
-Computer metrics for Local-gov class
-precision: 0.7423
-recall: 0.5760
-fbeta: 0.6486
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.5941
-recall: 0.4724
-fbeta: 0.5263
-
-Computer metrics for ? class
-precision: 0.6087
-recall: 0.3684
-fbeta: 0.4590
-
-Computer metrics for Federal-gov class
-precision: 0.7805
-recall: 0.4638
-fbeta: 0.5818
-
-Computer metrics for State-gov class
-precision: 0.7313
-recall: 0.6901
-fbeta: 0.7101
-
-Computer metrics for Never-worked class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Without-pay class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-####################################################
-Performance metrics for workclass slice:
-####################################################
-
-Computer metrics for Self-emp-inc class
-precision: 0.8072
-recall: 0.6381
-fbeta: 0.7128
-
-Computer metrics for Private class
-precision: 0.8379
-recall: 0.5094
-fbeta: 0.6336
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.7184
-recall: 0.4744
-fbeta: 0.5714
-
-Computer metrics for Local-gov class
-precision: 0.7143
-recall: 0.5159
-fbeta: 0.5991
-
-Computer metrics for ? class
-precision: 0.7917
-recall: 0.4872
-fbeta: 0.6032
-
-Computer metrics for Federal-gov class
-precision: 0.7561
-recall: 0.4306
-fbeta: 0.5487
-
-Computer metrics for State-gov class
-precision: 0.7719
-recall: 0.5789
-fbeta: 0.6617
-
-Computer metrics for Without-pay class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-####################################################
-Performance metrics for workclass slice:
-####################################################
-
-Computer metrics for Local-gov class
-precision: 0.7108
-recall: 0.5619
-fbeta: 0.6277
-
-Computer metrics for ? class
-precision: 0.6190
-recall: 0.4194
-fbeta: 0.5000
-
-Computer metrics for Federal-gov class
-precision: 0.8571
-recall: 0.5250
-fbeta: 0.6512
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.6724
-recall: 0.5132
-fbeta: 0.5821
-
-Computer metrics for Private class
-precision: 0.7771
-recall: 0.5138
-fbeta: 0.6186
-
-Computer metrics for State-gov class
-precision: 0.7887
-recall: 0.6512
-fbeta: 0.7134
-
-Computer metrics for Self-emp-inc class
-precision: 0.8447
-recall: 0.6797
-fbeta: 0.7532
-
-Computer metrics for Without-pay class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Never-worked class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-####################################################
-Performance metrics for workclass slice:
-####################################################
-
-Computer metrics for Private class
-precision: 0.7987
-recall: 0.4914
-fbeta: 0.6085
-
-Computer metrics for ? class
-precision: 0.5000
-recall: 0.2857
-fbeta: 0.3636
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.6746
-recall: 0.5592
-fbeta: 0.6115
-
-Computer metrics for Self-emp-inc class
-precision: 0.8868
-recall: 0.7121
-fbeta: 0.7899
-
-Computer metrics for Local-gov class
-precision: 0.6915
-recall: 0.6311
-fbeta: 0.6599
-
-Computer metrics for State-gov class
-precision: 0.7879
-recall: 0.6842
-fbeta: 0.7324
-
-Computer metrics for Federal-gov class
-precision: 0.7955
 recall: 0.5000
-fbeta: 0.6140
+fbeta: 0.6667
 
-Computer metrics for Without-pay class
+Computer metrics for Portugal class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for Never-worked class
+Computer metrics for Guatemala class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-####################################################
-Performance metrics for workclass slice:
-####################################################
+Computer metrics for China class
+precision: 0.8000
+recall: 1.0000
+fbeta: 0.8889
 
-Computer metrics for Private class
-precision: 0.7977
-recall: 0.4768
-fbeta: 0.5969
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.7217
-recall: 0.5092
-fbeta: 0.5971
-
-Computer metrics for ? class
-precision: 0.6667
-recall: 0.3226
-fbeta: 0.4348
-
-Computer metrics for State-gov class
-precision: 0.7692
-recall: 0.6667
-fbeta: 0.7143
-
-Computer metrics for Local-gov class
-precision: 0.7692
-recall: 0.5344
-fbeta: 0.6306
-
-Computer metrics for Federal-gov class
-precision: 0.9091
-recall: 0.4878
-fbeta: 0.6349
-
-Computer metrics for Self-emp-inc class
-precision: 0.8416
-recall: 0.6967
-fbeta: 0.7623
-
-Computer metrics for Never-worked class
+Computer metrics for France class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for Without-pay class
+Computer metrics for Nicaragua class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-####################################################
-Performance metrics for workclass slice:
-####################################################
-
-Computer metrics for Private class
-precision: 0.8103
-recall: 0.4953
-fbeta: 0.6148
-
-Computer metrics for ? class
-precision: 0.7200
-recall: 0.4091
-fbeta: 0.5217
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.6696
-recall: 0.5769
-fbeta: 0.6198
-
-Computer metrics for Local-gov class
-precision: 0.7573
-recall: 0.5778
-fbeta: 0.6555
-
-Computer metrics for State-gov class
-precision: 0.7778
-recall: 0.6562
-fbeta: 0.7119
-
-Computer metrics for Self-emp-inc class
-precision: 0.8039
-recall: 0.7130
-fbeta: 0.7558
-
-Computer metrics for Federal-gov class
-precision: 0.7447
-recall: 0.4730
-fbeta: 0.5785
-
-Computer metrics for Never-worked class
+Computer metrics for Vietnam class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-Computer metrics for Without-pay class
+Computer metrics for Thailand class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-####################################################
-Performance metrics for workclass slice:
-####################################################
+Computer metrics for Peru class
+precision: 1.0000
+recall: 0.0000
+fbeta: 0.0000
 
-Computer metrics for Private class
-precision: 0.8056
-recall: 0.4797
-fbeta: 0.6014
-
-Computer metrics for State-gov class
-precision: 0.7059
-recall: 0.7869
-fbeta: 0.7442
-
-Computer metrics for Self-emp-inc class
-precision: 0.8690
-recall: 0.6822
-fbeta: 0.7644
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.7041
-recall: 0.5702
-fbeta: 0.6301
-
-Computer metrics for Local-gov class
-precision: 0.6813
-recall: 0.5391
-fbeta: 0.6019
-
-Computer metrics for ? class
-precision: 0.6818
-recall: 0.4054
-fbeta: 0.5085
-
-Computer metrics for Federal-gov class
-precision: 0.8537
-recall: 0.4268
-fbeta: 0.5691
-
-Computer metrics for Without-pay class
+Computer metrics for Honduras class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
 
-####################################################
-Performance metrics for workclass slice:
-####################################################
-
-Computer metrics for Federal-gov class
-precision: 0.8298
-recall: 0.5065
-fbeta: 0.6290
-
-Computer metrics for ? class
-precision: 0.5000
-recall: 0.2432
-fbeta: 0.3273
-
-Computer metrics for Private class
-precision: 0.8210
-recall: 0.5011
-fbeta: 0.6223
-
-Computer metrics for Self-emp-inc class
-precision: 0.8462
-recall: 0.6417
-fbeta: 0.7299
-
-Computer metrics for Local-gov class
-precision: 0.7961
-recall: 0.6165
-fbeta: 0.6949
-
-Computer metrics for Self-emp-not-inc class
-precision: 0.7107
-recall: 0.5772
-fbeta: 0.6370
-
-Computer metrics for State-gov class
-precision: 0.8387
-recall: 0.7027
-fbeta: 0.7647
-
-Computer metrics for Never-worked class
-precision: 1.0000
-recall: 1.0000
-fbeta: 1.0000
-
-Computer metrics for Without-pay class
+Computer metrics for Yugoslavia class
 precision: 1.0000
 recall: 1.0000
 fbeta: 1.0000
@@ -1112,33 +529,577 @@ fbeta: 1.0000
 Performance metrics for relationship slice:
 ####################################################
 
+Computer metrics for Husband class
+precision: 0.7467
+recall: 0.5725
+fbeta: 0.6481
+
 Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.1667
+fbeta: 0.2857
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2683
+fbeta: 0.4231
+
+Computer metrics for Wife class
+precision: 0.8851
+recall: 0.4556
+fbeta: 0.6016
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.2250
+fbeta: 0.3673
+
+Computer metrics for Other-relative class
 precision: 1.0000
 recall: 0.1000
 fbeta: 0.1818
 
-Computer metrics for Husband class
-precision: 0.7826
-recall: 0.5764
-fbeta: 0.6639
+####################################################
+Performance metrics for relationship slice:
+####################################################
 
 Computer metrics for Not-in-family class
-precision: 0.9821
-recall: 0.2989
-fbeta: 0.4583
+precision: 1.0000
+recall: 0.2807
+fbeta: 0.4384
 
 Computer metrics for Unmarried class
 precision: 1.0000
-recall: 0.2703
-fbeta: 0.4255
+recall: 0.2391
+fbeta: 0.3860
+
+Computer metrics for Husband class
+precision: 0.7733
+recall: 0.5921
+fbeta: 0.6707
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.0833
+fbeta: 0.1538
 
 Computer metrics for Wife class
-precision: 0.8205
-recall: 0.4211
-fbeta: 0.5565
+precision: 0.8767
+recall: 0.4414
+fbeta: 0.5872
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.0000
+fbeta: 0.0000
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.4000
+fbeta: 0.5714
+
+Computer metrics for Husband class
+precision: 0.7750
+recall: 0.5975
+fbeta: 0.6748
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.0000
+fbeta: 0.0000
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1951
+fbeta: 0.3265
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2663
+fbeta: 0.4206
+
+Computer metrics for Wife class
+precision: 0.8000
+recall: 0.4359
+fbeta: 0.5643
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2927
+fbeta: 0.4528
+
+Computer metrics for Husband class
+precision: 0.7904
+recall: 0.6160
+fbeta: 0.6924
+
+Computer metrics for Wife class
+precision: 0.8810
+recall: 0.4596
+fbeta: 0.6041
+
+Computer metrics for Own-child class
+precision: 0.7500
+recall: 0.2143
+fbeta: 0.3333
+
+Computer metrics for Other-relative class
+precision: 0.5000
+recall: 0.1667
+fbeta: 0.2500
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.3095
+fbeta: 0.4727
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Husband class
+precision: 0.7775
+recall: 0.5962
+fbeta: 0.6749
+
+Computer metrics for Wife class
+precision: 0.8539
+recall: 0.4967
+fbeta: 0.6281
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.3077
+fbeta: 0.4706
+
+Computer metrics for Not-in-family class
+precision: 0.9773
+recall: 0.2402
+fbeta: 0.3857
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1346
+fbeta: 0.2373
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.2222
+fbeta: 0.3636
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.1875
+fbeta: 0.3158
+
+Computer metrics for Husband class
+precision: 0.7575
+recall: 0.5891
+fbeta: 0.6628
 
 Computer metrics for Other-relative class
 precision: 1.0000
 recall: 0.0000
 fbeta: 0.0000
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2584
+fbeta: 0.4107
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1957
+fbeta: 0.3273
+
+Computer metrics for Wife class
+precision: 0.7917
+recall: 0.4101
+fbeta: 0.5403
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.1946
+fbeta: 0.3258
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.2340
+fbeta: 0.3793
+
+Computer metrics for Husband class
+precision: 0.7807
+recall: 0.5857
+fbeta: 0.6693
+
+Computer metrics for Wife class
+precision: 0.8235
+recall: 0.4828
+fbeta: 0.6087
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.1250
+fbeta: 0.2222
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.2222
+fbeta: 0.3636
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Husband class
+precision: 0.7378
+recall: 0.5830
+fbeta: 0.6514
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2865
+fbeta: 0.4455
+
+Computer metrics for Own-child class
+precision: 0.5714
+recall: 0.3636
+fbeta: 0.4444
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1800
+fbeta: 0.3051
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.4000
+fbeta: 0.5714
+
+Computer metrics for Wife class
+precision: 0.8571
+recall: 0.4966
+fbeta: 0.6288
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.0667
+fbeta: 0.1250
+
+Computer metrics for Husband class
+precision: 0.7662
+recall: 0.5971
+fbeta: 0.6712
+
+Computer metrics for Wife class
+precision: 0.8222
+recall: 0.5103
+fbeta: 0.6298
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2125
+fbeta: 0.3505
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1875
+fbeta: 0.3158
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.0000
+fbeta: 0.0000
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2229
+fbeta: 0.3645
+
+Computer metrics for Husband class
+precision: 0.7806
+recall: 0.5856
+fbeta: 0.6692
+
+Computer metrics for Other-relative class
+precision: 0.3333
+recall: 0.3333
+fbeta: 0.3333
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1707
+fbeta: 0.2917
+
+Computer metrics for Wife class
+precision: 0.8119
+recall: 0.5190
+fbeta: 0.6332
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.3750
+fbeta: 0.5455
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.1250
+fbeta: 0.2222
+
+Computer metrics for Wife class
+precision: 0.8625
+recall: 0.4423
+fbeta: 0.5847
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.0833
+fbeta: 0.1538
+
+Computer metrics for Husband class
+precision: 0.8018
+recall: 0.5906
+fbeta: 0.6802
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2130
+fbeta: 0.3512
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1277
+fbeta: 0.2264
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Wife class
+precision: 0.8365
+recall: 0.4703
+fbeta: 0.6021
+
+Computer metrics for Own-child class
+precision: 0.7500
+recall: 0.1667
+fbeta: 0.2727
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2971
+fbeta: 0.4581
+
+Computer metrics for Husband class
+precision: 0.7993
+recall: 0.5631
+fbeta: 0.6607
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1591
+fbeta: 0.2745
+
+Computer metrics for Other-relative class
+precision: 0.6667
+recall: 0.2000
+fbeta: 0.3077
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Husband class
+precision: 0.7698
+recall: 0.5822
+fbeta: 0.6630
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2609
+fbeta: 0.4138
+
+Computer metrics for Other-relative class
+precision: 0.6667
+recall: 0.1667
+fbeta: 0.2667
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.2000
+fbeta: 0.3333
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.2000
+fbeta: 0.3333
+
+Computer metrics for Wife class
+precision: 0.8243
+recall: 0.4519
+fbeta: 0.5837
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Not-in-family class
+precision: 0.9804
+recall: 0.2959
+fbeta: 0.4545
+
+Computer metrics for Own-child class
+precision: 0.7500
+recall: 0.4286
+fbeta: 0.5455
+
+Computer metrics for Husband class
+precision: 0.7565
+recall: 0.5661
+fbeta: 0.6476
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.0000
+fbeta: 0.0000
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.2500
+fbeta: 0.4000
+
+Computer metrics for Wife class
+precision: 0.8085
+recall: 0.5507
+fbeta: 0.6552
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Not-in-family class
+precision: 0.9787
+recall: 0.2722
+fbeta: 0.4259
+
+Computer metrics for Own-child class
+precision: 0.6667
+recall: 0.1333
+fbeta: 0.2222
+
+Computer metrics for Husband class
+precision: 0.7830
+recall: 0.5839
+fbeta: 0.6689
+
+Computer metrics for Wife class
+precision: 0.8624
+recall: 0.5529
+fbeta: 0.6738
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1087
+fbeta: 0.1961
+
+Computer metrics for Other-relative class
+precision: 0.0000
+recall: 0.0000
+fbeta: 0.0000
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2747
+fbeta: 0.4310
+
+Computer metrics for Husband class
+precision: 0.7663
+recall: 0.5810
+fbeta: 0.6609
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.3333
+fbeta: 0.5000
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.2000
+fbeta: 0.3333
+
+Computer metrics for Wife class
+precision: 0.8977
+recall: 0.5374
+fbeta: 0.6723
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.2500
+fbeta: 0.4000
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Husband class
+precision: 0.7622
+recall: 0.5826
+fbeta: 0.6604
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2561
+fbeta: 0.4078
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.0769
+fbeta: 0.1429
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.2045
+fbeta: 0.3396
+
+Computer metrics for Wife class
+precision: 0.9221
+recall: 0.4830
+fbeta: 0.6339
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.4000
+fbeta: 0.5714
 

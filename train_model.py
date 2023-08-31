@@ -31,12 +31,12 @@ logging.getLogger().addHandler(logging.StreamHandler())
 cat_features = [
     "workclass",
     "education",
-    "marital-status",
+    "marital_status",
     "occupation",
     "relationship",
     "race",
     "sex",
-    "native-country",
+    "native_country",
 ]
 
 # path to model, encoder and lb
@@ -47,13 +47,15 @@ lb_name = 'lb.pkl'
 
 logging.info('Creating dataframe')
 data = pd.read_csv("data/census.csv", skipinitialspace=True)
+data.columns = data.columns.str.replace('-', '_')
 
 # Optional enhancement, use K-fold cross validation instead of a
 logging.info('Splitting train-test data')
-train, test = train_test_split(data, test_size=0.20)
+train, test = train_test_split(data, test_size=0.20, random_state=42)
 
 # if encoder and lb exist load them, else create them
 logging.info('Checking if model, encoder and labelbinarizer exist')
+
 check = check_econder_lb(model_path, model_name, encoder_name, lb_name)
 if check == 3:
     model = load(model_path + model_name)
@@ -78,6 +80,9 @@ X_test, y_test, encoder, lb = process_data(
     test, categorical_features=cat_features, label='salary', training=False, encoder=encoder, lb=lb
 )
 
+# # save precessed test data, will be used for testing
+# save(X_test, model_path + 'processed_x_test.pkl')
+# save(y_test, model_path + 'processed_y_test.pkl')
 
 # Run model inferences and return the predictions.
 # X_test : np.array Data used for prediction.
@@ -101,6 +106,8 @@ logging.info('Computing metrics for each categorical column slice..')
 out_path = 'out/'
 if os.path.isfile(out_path + 'slice_output.txt'):
     os.remove(out_path + 'slice_output.txt')
+
+
 for col in cat_features:
     sliced_model_metrics(test, X_test, y_test, col, model)
 logging.info('done.')
