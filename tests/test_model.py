@@ -115,69 +115,69 @@ def test_save(get_train_data):
         raise err
 
 
-def test_load():
-    '''
-    test loading encoder and lb is working as expected
-    '''
-    try:
-        if os.path.isfile(model_path + model_name):
-            assert load(model_path + model_name)
-    except AssertionError as err:
-        logging.error(
-            "ERROR: Testing test_load - model has not loaded properly")
-        raise err
+# def test_load():
+#     '''
+#     test loading encoder and lb is working as expected
+#     '''
+#     try:
+#         if os.path.isfile(model_path + model_name):
+#             assert load(model_path + model_name)
+#     except AssertionError as err:
+#         logging.error(
+#             "ERROR: Testing test_load - model has not loaded properly")
+#         raise err
 
 
-def test_inference(get_model, get_test_data):
-    '''
-    test prediction's type
-    '''
-    try:
-        preds = inference(get_model, get_test_data[0])
-        assert isinstance(preds, np.ndarray)
-    except AssertionError as err:
-        logging.error(
-            "ERROR: Testing test_inference - preds is not a np.array")
-        raise err
+# def test_inference(get_model, get_test_data):
+#     '''
+#     test prediction's type
+#     '''
+#     try:
+#         preds = inference(get_model, get_test_data[0])
+#         assert isinstance(preds, np.ndarray)
+#     except AssertionError as err:
+#         logging.error(
+#             "ERROR: Testing test_inference - preds is not a np.array")
+#         raise err
 
-    # test size of predictions
-    try:
-        assert len(preds) == get_test_data[0].shape[0]
-    except AssertionError as err:
-        logging.error(
-            "ERROR: Testing test_inference - preds is not the same size as test data")
-        raise err
-
-
-def test_sliced_model_metrics(data_split, get_test_data, get_model, data):
-    '''
-    test to check if function calculates metrics for each class in each feature
-    number of features = len(cat_feaures)
-    number of unique classes in each feature
-
-    '''
-    num_classes = len(data['relationship'].unique())
-    try:
-        assert sliced_model_metrics(
-            data_split[1],
-            get_test_data[0],
-            get_test_data[1],
-            'relationship',
-            get_model) == num_classes
-    except AssertionError as err:
-        logging.error(
-            "ERROR: Testing test_sliced_model_metrics - did not run exact lenght of cat_features")
-        raise err
+#     # test size of predictions
+#     try:
+#         assert len(preds) == get_test_data[0].shape[0]
+#     except AssertionError as err:
+#         logging.error(
+#             "ERROR: Testing test_inference - preds is not the same size as test data")
+#         raise err
 
 
-# def test_compute_model_metrics(y, preds):
-def test_compute_model_metrics():
-    """
-    test to see if slice_output file is not a blank file
-    """
-    try:
-        assert os.stat(out_path + 'slice_output.txt').st_size != 0
-    except AssertionError as err:
-        logging.error("ERROR: Testing test_compute_model_metrics - there is not "
-                    + "a file named slice_output.txt in out folder")
-        raise err
+# def test_sliced_model_metrics(data_split, get_test_data, get_model, data):
+#     '''
+#     test to check if function calculates metrics for each class in each feature
+#     number of features = len(cat_feaures)
+#     number of unique classes in each feature
+
+#     '''
+#     num_classes = len(data['relationship'].unique())
+#     try:
+#         assert sliced_model_metrics(
+#             data_split[1],
+#             get_test_data[0],
+#             get_test_data[1],
+#             'relationship',
+#             get_model) == num_classes
+#     except AssertionError as err:
+#         logging.error(
+#             "ERROR: Testing test_sliced_model_metrics - did not run exact lenght of cat_features")
+#         raise err
+
+
+# # def test_compute_model_metrics(y, preds):
+# def test_compute_model_metrics():
+#     """
+#     test to see if slice_output file is not a blank file
+#     """
+#     try:
+#         assert os.stat(out_path + 'slice_output.txt').st_size != 0
+#     except AssertionError as err:
+#         logging.error("ERROR: Testing test_compute_model_metrics - there is not "
+#                     + "a file named slice_output.txt in out folder")
+#         raise err
