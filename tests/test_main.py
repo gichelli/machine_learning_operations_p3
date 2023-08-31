@@ -162,7 +162,7 @@ def test_post_data_success():
          "hours_per_week": 55,
          "native_country": "United-States", 
          "salary": ">50K",
-         'prediction': 1}
+         "prediction": 1}
     # print(data)
     # print(ff)
     # print(type(p))

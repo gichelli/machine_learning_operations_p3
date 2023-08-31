@@ -77,7 +77,7 @@ else:
 # encoder OneHotEncoder, only used if training=False.
 logging.info('processing test data..')
 X_test, y_test, encoder, lb = process_data(
-    test, categorical_features=cat_features, label='salary', training=False, encoder=encoder, lb=lb
+    test, categoricalxxxxx_features=cat_features, label='salary', training=False, encoder=encoder, lb=lb
 )
 
 
