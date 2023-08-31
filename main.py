@@ -214,17 +214,17 @@ async def ingest_data(data: Data):
     return data
 
 
-# Define a POST for the specified endpoint
-@app.post("/data/")
-async def ingest_data1(data: Data1):
-    if data.feature_1 < 0:
-        raise HTTPException(status_code=400, detail="feature_1 needs to be above 0.")
-    if len(data.feature_2) > 280:
-        raise HTTPException(
-            status_code=400,
-            detail=f"feature_2 needs to be less than 281 characters. It has {len(data.feature_2)}.",
-        )
-    return data
+# # Define a POST for the specified endpoint
+# @app.post("/data/")
+# async def ingest_data1(data: Data1):
+#     if data.feature_1 < 0:
+#         raise HTTPException(status_code=400, detail="feature_1 needs to be above 0.")
+#     if len(data.feature_2) > 280:
+#         raise HTTPException(
+#             status_code=400,
+#             detail=f"feature_2 needs to be less than 281 characters. It has {len(data.feature_2)}.",
+#         )
+#     return data
 
 
 
