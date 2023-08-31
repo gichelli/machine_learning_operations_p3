@@ -96,172 +96,172 @@ def test_get_greeting_success():
     assert r.json().get('greeting') == 'Greetings from my API!'
 
 
-# # def test_in_success():
-# #     data = {"feature_1": 1, "feature_2": "test string"}
+# def test_in_success():
+#     data = {"feature_1": 1, "feature_2": "test string"}
 
-# #     r = client.post("/predictions/", data=json.dumps(data))
-# #     assert r.status_code == 200
-
-
-
-
-
-
-
-
-
-# # def test_get_path():
-# #     r = client.get("/items/42")
-# #     assert r.status_code == 200
-# #     assert r.json() == {"fetch": "Fetched 1 of 42"}
-
-
-# # def test_get_path_query():
-# #     r = client.get("/items/42?count=5")
-# #     assert r.status_code == 200
-# #     assert r.json() == {"fetch": "Fetched 5 of 42"}
-
-
-# # def test_get_malformed():
-# #     r = client.get("/items")
-# #     assert r.status_code != 200
-
-
-# # test post
-
-# # def test_preds_success():
-# #     r = client.post("/data/", data=json.dumps(nn))
-# #     print("^^^^^^^^^^^^^^^^^^^^^")
-# #     print(nn)
-# #     print(r)
-# #     print("^^^^^^^^^^^^^^^^^^^^^")
-# #     assert r.status_code == 200
-
-
-# # # def test_preds_fail():
-# # json.dumps(nn, indent = 2)
-
-# # print(nn)
-# def test_post_data_success():
-#     # data = {"feature_1": 1, "feature_2": "test string"}
-#     # print(nn)
-#     # data = json.dumps(nn, indent = 2)
-#     # print(data)
-#     data = {"age": 29, 
-#          "workclass": "Private", 
-#          "fnlgt": 185908,
-#          "education": "Bachelors", 
-#          "education_num": 13,
-#          "marital_status": "Married-civ-spouse",
-#          "occupation": "Exec-managerial",
-#          "relationship": "Husband",
-#          "race": "Black",
-#          "sex": "Male",
-#          "capital_gain": 0,
-#          "capital_loss": 0,
-#          "hours_per_week": 55,
-#          "native_country": "United-States", 
-#          "salary": ">50K",
-#          'prediction': 1}
-#     # print(data)
-#     # print(ff)
-#     # print(type(p))
-#     # print(type(ff))
-#     # print(p)
-#     # print(ff)
-#     # ff = data.to_dict()
-#     # print(ff)
-#     r = client.post("/data/", data=json.dumps(data))
-#     # r = client.post("/data/", data={"data":datax.to_json()})
-
-#     # r = client.post("/data/", nn)
-#     print(r.status_code)
+#     r = client.post("/predictions/", data=json.dumps(data))
 #     assert r.status_code == 200
 
 
-# # def test_post_data_fail():
-# #     data = {"feature_1": -5, "feature_2": "test string"}
-# #     r = client.post("/data/", data=json.dumps(data))
-# #     assert r.status_code == 400
+
+
+
+
+
+
+
+# def test_get_path():
+#     r = client.get("/items/42")
+#     assert r.status_code == 200
+#     assert r.json() == {"fetch": "Fetched 1 of 42"}
+
+
+# def test_get_path_query():
+#     r = client.get("/items/42?count=5")
+#     assert r.status_code == 200
+#     assert r.json() == {"fetch": "Fetched 5 of 42"}
+
+
+# def test_get_malformed():
+#     r = client.get("/items")
+#     assert r.status_code != 200
+
+
+# test post
+
+# def test_preds_success():
+#     r = client.post("/data/", data=json.dumps(nn))
+#     print("^^^^^^^^^^^^^^^^^^^^^")
+#     print(nn)
+#     print(r)
+#     print("^^^^^^^^^^^^^^^^^^^^^")
+#     assert r.status_code == 200
+
+
+# # def test_preds_fail():
+# json.dumps(nn, indent = 2)
+
+# print(nn)
+def test_post_data_success():
+    # data = {"feature_1": 1, "feature_2": "test string"}
+    # print(nn)
+    # data = json.dumps(nn, indent = 2)
+    # print(data)
+    data = {"age": 29, 
+         "workclass": "Private", 
+         "fnlgt": 185908,
+         "education": "Bachelors", 
+         "education_num": 13,
+         "marital_status": "Married-civ-spouse",
+         "occupation": "Exec-managerial",
+         "relationship": "Husband",
+         "race": "Black",
+         "sex": "Male",
+         "capital_gain": 0,
+         "capital_loss": 0,
+         "hours_per_week": 55,
+         "native_country": "United-States", 
+         "salary": ">50K",
+         'prediction': 1}
+    # print(data)
+    # print(ff)
+    # print(type(p))
+    # print(type(ff))
+    # print(p)
+    # print(ff)
+    # ff = data.to_dict()
+    # print(ff)
+    r = client.post("/data/", data=json.dumps(data))
+    # r = client.post("/data/", data={"data":datax.to_json()})
+
+    # r = client.post("/data/", nn)
+    print(r.status_code)
+    assert r.status_code == 200
 
 
 # def test_post_data_fail():
-
-    
-#     data = {"age": 45, 
-#          "workclass": "State-gov", 
-#          "fnlgt": 50567,
-#          "education": "HS-grad", 
-#          "education_num": 9,
-#          "marital_status": "Married-civ-spouse",
-#          "occupation": "Exec-managerial",
-#          "relationship": "Wife",
-#          "race": "White",
-#          "sex": "Female",
-#          "capital_gain": 0,
-#          "capital_loss": 0,
-#          "hours_per_week": 40,
-#          "native_country": "United-States", 
-#          "salary": "<=50K",
-#          'prediction': 1
-#          }
-#     # print(data)
-#     # print(ff)
-#     # print(type(p))
-#     # print(type(ff))
-#     # print(p)
-#     # print(ff)
-#     # ff = data.to_dict()
-#     # print(ff)
+#     data = {"feature_1": -5, "feature_2": "test string"}
 #     r = client.post("/data/", data=json.dumps(data))
-#     # r = client.post("/data/", data={"data":datax.to_json()})
-
-#     # r = client.post("/data/", nn)
-#     print(r)
 #     assert r.status_code == 400
 
 
-# # # test post
-# # def test_post_data_success():
-# #     data = {"feature_1": 1, "feature_2": "test string"}
-# #     r = client.post("/data/", data=json.dumps(data))
-# #     assert r.status_code == 200
+def test_post_data_fail():
+
+    
+    data = {"age": 45, 
+         "workclass": "State-gov", 
+         "fnlgt": 50567,
+         "education": "HS-grad", 
+         "education_num": 9,
+         "marital_status": "Married-civ-spouse",
+         "occupation": "Exec-managerial",
+         "relationship": "Wife",
+         "race": "White",
+         "sex": "Female",
+         "capital_gain": 0,
+         "capital_loss": 0,
+         "hours_per_week": 40,
+         "native_country": "United-States", 
+         "salary": "<=50K",
+         'prediction': 1
+         }
+    # print(data)
+    # print(ff)
+    # print(type(p))
+    # print(type(ff))
+    # print(p)
+    # print(ff)
+    # ff = data.to_dict()
+    # print(ff)
+    r = client.post("/data/", data=json.dumps(data))
+    # r = client.post("/data/", data={"data":datax.to_json()})
+
+    # r = client.post("/data/", nn)
+    print(r)
+    assert r.status_code == 400
 
 
-# # def test_post_data_fail():
-# #     data = {"feature_1": -5, "feature_2": "test string"}
-# #     r = client.post("/data/", data=json.dumps(data))
-# #     assert r.status_code == 400
+# # test post
+# def test_post_data_success():
+#     data = {"feature_1": 1, "feature_2": "test string"}
+#     r = client.post("/data/", data=json.dumps(data))
+#     assert r.status_code == 200
 
 
-# # ***********************************************************
-# # def test_post():
-# #     data = json.dumps({"value": 10})
-# #     r = client.post("/42?query=5", data=data)
-# #     print(r.json())
-# #     assert r.json()["path"] == 42
-# #     assert r.json()["query"] == 5
-# #     assert r.json()["body"] == {"value": 10}
-
-# # def test_get_path():
-# #     r = client.get("/items/42")
-# #     assert r.status_code == 200
-# #     assert r.json() == {"fetch": "Fetched 1 of 42"}
+# def test_post_data_fail():
+#     data = {"feature_1": -5, "feature_2": "test string"}
+#     r = client.post("/data/", data=json.dumps(data))
+#     assert r.status_code == 400
 
 
-# # def test_get_path_query():
-# #     r = client.get("/items/42?count=5")
-# #     assert r.status_code == 200
-# #     assert r.json() == {"fetch": "Fetched 5 of 42"}
+# ***********************************************************
+# def test_post():
+#     data = json.dumps({"value": 10})
+#     r = client.post("/42?query=5", data=data)
+#     print(r.json())
+#     assert r.json()["path"] == 42
+#     assert r.json()["query"] == 5
+#     assert r.json()["body"] == {"value": 10}
+
+# def test_get_path():
+#     r = client.get("/items/42")
+#     assert r.status_code == 200
+#     assert r.json() == {"fetch": "Fetched 1 of 42"}
 
 
-# # def test_get_malformed():
-# #     r = client.get("/items")
-# #     assert r.status_code != 200
+# def test_get_path_query():
+#     r = client.get("/items/42?count=5")
+#     assert r.status_code == 200
+#     assert r.json() == {"fetch": "Fetched 5 of 42"}
+
+
+# def test_get_malformed():
+#     r = client.get("/items")
+#     assert r.status_code != 200
 
 
 
-# if __name__ == "__main__":
-#     test_get_greeting_success()
-#     test_post_data_success()
-#     # test_post_data_fail()
+if __name__ == "__main__":
+    test_get_greeting_success()
+    test_post_data_success()
+    # test_post_data_fail()
