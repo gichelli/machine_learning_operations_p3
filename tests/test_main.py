@@ -1,99 +1,99 @@
-# import json
-# import pandas as pd
-# import os, sys
-# # print(os.getcwd())
-# sys.path.append('..')
-# # print(os.getcwd())
-# from ml.data import process_data
-# from ml.model import split_and_process_data, load, inference
-# from sklearn.metrics import fbeta_score, precision_score, recall_score
-# from sklearn.model_selection import train_test_split
-# from fastapi.testclient import TestClient
+import json
+import pandas as pd
+import os, sys
+# print(os.getcwd())
+sys.path.append('..')
+# print(os.getcwd())
+from ml.data import process_data
+from ml.model import split_and_process_data, load, inference
+from sklearn.metrics import fbeta_score, precision_score, recall_score
+from sklearn.model_selection import train_test_split
+from fastapi.testclient import TestClient
 
-# from main import app
+from main import app
 
-# cat_features = [
-#     "workclass",
-#     "education",
-#     "marital_status",
-#     "occupation",
-#     "relationship",
-#     "race",
-#     "sex",
-#     "native_country",
-# ]
-# # model_path = '../model/'
-# # model_name = 'model.pkl'
-# # encoder_name = 'encoder.pkl'
-# # lb_name = 'lb.pkl'
+cat_features = [
+    "workclass",
+    "education",
+    "marital_status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native_country",
+]
+# model_path = '../model/'
+# model_name = 'model.pkl'
+# encoder_name = 'encoder.pkl'
+# lb_name = 'lb.pkl'
 
-# client = TestClient(app)
+client = TestClient(app)
 
 
 
-# # # # get data to test
-# # df = pd.read_csv("../data/census.csv", skipinitialspace=True)
-# # df.columns = df.columns.str.replace('-', '_')
-# # # # print(df)
-# # train, test = train_test_split(df, test_size=0.20, random_state=42)
-# # # # X_train, y_train, encoder, lb = process_data(
-# # # #         train, categorical_features=cat_features, label="salary", training=True
-# # # #     )
+# # # get data to test
+# df = pd.read_csv("../data/census.csv", skipinitialspace=True)
+# df.columns = df.columns.str.replace('-', '_')
+# # # print(df)
+# train, test = train_test_split(df, test_size=0.20, random_state=42)
+# # # X_train, y_train, encoder, lb = process_data(
+# # #         train, categorical_features=cat_features, label="salary", training=True
+# # #     )
 
-# # # load model, econder and labelbinarizer
-# # model = load(model_path + model_name)
-# # encoder = load(model_path + encoder_name)
-# # lb = load(model_path + lb_name)
+# # load model, econder and labelbinarizer
+# model = load(model_path + model_name)
+# encoder = load(model_path + encoder_name)
+# lb = load(model_path + lb_name)
 
-# # # process test data
-# # # X_test, y_test, encoder, lb = process_data(test, cat_features, 'salary', True, encoder, lb)
+# # process test data
+# # X_test, y_test, encoder, lb = process_data(test, cat_features, 'salary', True, encoder, lb)
 
-# # datax = test.iloc[2]
-# # print(type(datax))
-# # print(datax)
-# # # convert data to json format
-# # print("------------------")
-# # dfg = test.apply(lambda x: x.to_json(), axis=1)
-# # print(type(dfg))
+# datax = test.iloc[2]
+# print(type(datax))
+# print(datax)
+# # convert data to json format
+# print("------------------")
+# dfg = test.apply(lambda x: x.to_json(), axis=1)
+# print(type(dfg))
 
-# # print(dfg)
-# # print("------------------")
+# print(dfg)
+# print("------------------")
 
-# # print("***************")
-# # nn= dfg.iloc[2]
-# # print(nn)
-# # print("***************")
-# # print("---***************")
-# # print("hi")
-# # # ff = data.to_dict()
-# # # print(ff)
-# # print("---***************")
+# print("***************")
+# nn= dfg.iloc[2]
+# print(nn)
+# print("***************")
+# print("---***************")
+# print("hi")
+# # ff = data.to_dict()
+# # print(ff)
+# print("---***************")
 
-# # for i in data.index:
-# #     print("------------------")
-# #     print(i)
-# #     print("------------------")
-# #     data.loc[i].to_json("row{}.json".format(i))
-# # print("------------------")
+# for i in data.index:
+#     print("------------------")
+#     print(i)
+#     print("------------------")
+#     data.loc[i].to_json("row{}.json".format(i))
+# print("------------------")
 
-# # print(data)
+# print(data)
 
-# # sample_X_test = X_test[:1]
-# # pred = inference(model, sample_X_test)
+# sample_X_test = X_test[:1]
+# pred = inference(model, sample_X_test)
 
-# # precision = precision_score(y_test, pred, zero_division=1)
-# # recall = recall_score(y_test, pred, zero_division=1)
-# # fbeta = fbeta_score(y_test, pred, beta=1, zero_division=1)
+# precision = precision_score(y_test, pred, zero_division=1)
+# recall = recall_score(y_test, pred, zero_division=1)
+# fbeta = fbeta_score(y_test, pred, beta=1, zero_division=1)
 
-# # print(precision)
-# # print(recall)
-# # print(fbeta)
+# print(precision)
+# print(recall)
+# print(fbeta)
 
-# # test get
-# def test_get_greeting_success():
-#     r = client.get('/')
-#     assert r.status_code == 200
-#     assert r.json().get('greeting') == 'Greetings from my API!'
+# test get
+def test_get_greeting_success():
+    r = client.get('/')
+    assert r.status_code == 200
+    assert r.json().get('greeting') == 'Greetings from my API!'
 
 
 # # def test_in_success():
