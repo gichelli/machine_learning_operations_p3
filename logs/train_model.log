@@ -1,6 +1,7 @@
 root - INFO - Creating dataframe
 root - INFO - Splitting train-test data
 root - INFO - Checking if model, encoder and labelbinarizer exist
+root - INFO - Saving model, encoder and lb
 root - INFO - processing test data..
 root - INFO - getting predictions..
 root - INFO - computing metrics for all data..

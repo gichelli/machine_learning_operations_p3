@@ -1,2 +1,5 @@
 *.pyc
 *.ipynb_checkpoints/
+model/encoder_sample.pkl
+model/lb_sample.pkl
+model/model_sample.pkl
