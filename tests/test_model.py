@@ -181,3 +181,9 @@ def test_compute_model_metrics():
         logging.error("ERROR: Testing test_compute_model_metrics - there is not "
                     + "a file named slice_output.txt in out folder")
         raise err
+    
+# delete sample files
+def test_remove_files():
+    os.remove(model_path + model_name)
+    os.remove(model_path + encoder_name)
+    os.remove(model_path + lb_name)
