@@ -67,7 +67,7 @@ else:
     )
     # save encoder and lb
     logging.info('Saving model, encoder and lb')
-    model = trainxxxx_model(X_train, y_train)
+    model = train_model(X_train, y_train)
     save(model, model_path + model_name)
     save(encoder, model_path + encoder_name)
     save(lb, model_path + lb_name)
@@ -80,9 +80,7 @@ X_test, y_test, encoder, lb = process_data(
     test, categorical_features=cat_features, label='salary', training=False, encoder=encoder, lb=lb
 )
 
-# # save precessed test data, will be used for testing
-# save(X_test, model_path + 'processed_x_test.pkl')
-# save(y_test, model_path + 'processed_y_test.pkl')
+
 
 # Run model inferences and return the predictions.
 # X_test : np.array Data used for prediction.
