@@ -67,7 +67,7 @@ else:
     )
     # save encoder and lb
     logging.info('Saving model, encoder and lb')
-    model = train_model(X_train, y_train)
+    model = trainxxxx_model(X_train, y_train)
     save(model, model_path + model_name)
     save(encoder, model_path + encoder_name)
     save(lb, model_path + lb_name)
