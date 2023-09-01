@@ -1,3 +1,8 @@
+'''
+Script to process the data used in the machine learning pipeline.
+'''
+
+# import libraries
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder

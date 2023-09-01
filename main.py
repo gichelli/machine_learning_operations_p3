@@ -1,5 +1,6 @@
 # Put the code for your API here.
 import pandas as pd
+import logging
 from fastapi import FastAPI, HTTPException
 from ml.data import process_data
 from pydantic import BaseModel
@@ -8,9 +9,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
 # Create a RESTful API using FastAPI this must implement:
-# class Data(BaseModel):
-#     feature_1: float
-#     feature_2: str
 
 model_path = 'model/'
 model_name = 'model.pkl'
@@ -46,7 +44,6 @@ class Data(BaseModel):
     hours_per_week:int 
     native_country:str
     salary:str
-    prediction:int
 
 
 # get data to test
@@ -58,11 +55,6 @@ train, test = train_test_split(df, test_size=0.20, random_state=42)
 model = load(model_path + model_name)
 encoder = load(model_path + encoder_name)
 lb = load(model_path + lb_name)
-
-# process test data
-X_test, y_test, encoder, lb = process_data(
-    test, categorical_features=cat_features, label='salary', training=False, encoder=encoder, lb=lb
-)
 
 app = FastAPI(
     title="Gretting API",
@@ -82,18 +74,32 @@ async def greet():
 #  test cases for EACH of the possible inferences (results/outputs) of the ML model.
 @app.post("/data/")
 async def ingest_data(data: Data):
-    pred = inference(model, X_test)
-    if data.salary == '>50K' and data.prediction != pred[2]:
-    # pred is 1 when salary is above 50k
-        print("greater than 50")
-        raise HTTPException(status_code=400, detail="write reason of error here")
-    if data.salary == '<=50K' and data.prediction != pred[1]:
-        print("less than 50k")
+    dict_data = dict(data)
+    df_data = pd.DataFrame.from_dict([dict_data])
+
+    X_test, _, _, _ = process_data(
+    df_data, categorical_features=cat_features, label='salary', training=False, encoder=encoder, lb=lb)
+
+    pred = inference(model, X_test)[0]
+
+    # make sure that int values are greater than 0
+    if data.capital_gain or data.capital_loss < 0:
+        raise HTTPException(status_code=400, detail="capital_gain and/or capital_loss" 
+                            + "needs to be above 0.")
+
+    if df_data['salary'][0] == '>50K'  and pred != 0:
         # pred is 0 when salary is below or equal to 50k
         raise HTTPException(
             status_code=400,
-            detail="write reason of error here"
+            detail=f"Prediction salary {pred}: is not equal to given salary: {df_data['salary'][0]}",
         )
+    if df_data['salary'][0] != '<=50K' and pred == 0:
+        # pred is 1 when salary is below or equal to 50k
+        raise HTTPException(
+            status_code=400,
+            detail=f"Prediction salary {pred}: is not equal to given salary: {df_data['salary'][0]}"
+        )
+
     return data
 
 
