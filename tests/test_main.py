@@ -1,7 +1,4 @@
 import json
-import pandas as pd
-import os, sys
-# sys.path.append('..')
 from fastapi.testclient import TestClient
 
 from main import app

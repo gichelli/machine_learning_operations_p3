@@ -1,8 +1,7 @@
 '''
 Script to train machine learning model.
-
 Author: Gissella Gonzalez
-Date  : August 28, 2023
+Date: August 28, 2023
 '''
 # import libraries
 import os
@@ -82,7 +81,6 @@ X_test, y_test, encoder, lb = process_data(
 )
 
 
-
 # Run model inferences and return the predictions.
 # X_test : np.array Data used for prediction.
 logging.info('getting predictions..')
@@ -107,7 +105,6 @@ with open(out_path + 'slice_output.txt', 'a', encoding="utf8") as file:
 # compute metrics for each slice total 8, cat cols
 # workclass below should be passed as a list such as cat_features
 # sliced_model_metrics(test, X_test, y_test, 'workclass', model)
-
 
 
 for col in cat_features:

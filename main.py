@@ -6,13 +6,11 @@ Date  : Sept, 2023
 '''
 # import libraries
 import pandas as pd
-import logging
 from fastapi import FastAPI, HTTPException
 from ml.data import process_data
 from pydantic import BaseModel
 from ml.model import load, inference
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
 
 # Create a RESTful API using FastAPI this must implement:
 
@@ -35,21 +33,21 @@ model = load(model_path + model_name)
 
 
 class Data(BaseModel):
-    age:int 
-    workclass:str
-    fnlgt:int 
-    education:str
-    education_num:int 
-    marital_status:str
-    occupation:str
-    relationship:str
-    race:str
-    sex:str
-    capital_gain:int 
-    capital_loss:int 
-    hours_per_week:int 
-    native_country:str
-    salary:str
+    age: int 
+    workclass: str
+    fnlgt: int 
+    education: str
+    education_num: int 
+    marital_status: str
+    occupation: str
+    relationship: str
+    race: str
+    sex: str
+    capital_gain: int 
+    capital_loss: int 
+    hours_per_week: int 
+    native_country: str
+    salary: str
 
 
 # get data to test
@@ -96,15 +94,13 @@ async def ingest_data(data: Data):
 
     if df_data['salary'][0] == '>50K'  and pred != 0:
         # pred is 0 when salary is below or equal to 50k
-        raise HTTPException(
-            status_code=400,
-            detail=f"Prediction salary {pred}: is not equal to given salary: {df_data['salary'][0]}",
+        raise HTTPException(status_code=400,
+                            detail=f"Prediction salary {pred}: is not equal to given salary: {df_data['salary'][0]}",
         )
     if df_data['salary'][0] != '<=50K' and pred == 0:
         # pred is 1 when salary is below or equal to 50k
-        raise HTTPException(
-            status_code=400,
-            detail=f"Prediction salary {pred}: is not equal to given salary: {df_data['salary'][0]}"
+        raise HTTPException(status_code=400,
+                            detail=f"Prediction salary {pred}: is not equal to given salary: {df_data['salary'][0]}"
         )
 
     return data
