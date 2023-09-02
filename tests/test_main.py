@@ -12,7 +12,7 @@ cat_features = [
     "marital_status",
     "occupation",
     "relationship",
-    "rasce",
+    "race",
     "sex",
     "native_country",
 ]

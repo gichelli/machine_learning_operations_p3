@@ -1,4 +1,10 @@
-# Put the code for your API here.
+'''
+Script to define API data ingestion
+
+Author: Gissella Gonzalez
+Date  : Sept, 2023
+'''
+# import libraries
 import pandas as pd
 import logging
 from fastapi import FastAPI, HTTPException
@@ -76,6 +82,7 @@ async def greet():
 async def ingest_data(data: Data):
     dict_data = dict(data)
     df_data = pd.DataFrame.from_dict([dict_data])
+    print(df_data)
 
     X_test, _, _, _ = process_data(
     df_data, categorical_features=cat_features, label='salary', training=False, encoder=encoder, lb=lb)

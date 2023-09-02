@@ -44,6 +44,7 @@ model_path = 'model/'
 model_name = 'model.pkl'
 encoder_name = 'encoder.pkl'
 lb_name = 'lb.pkl'
+out_path = 'out/'
 
 logging.info('Creating dataframe')
 data = pd.read_csv("data/census.csv", skipinitialspace=True)
@@ -87,23 +88,26 @@ X_test, y_test, encoder, lb = process_data(
 logging.info('getting predictions..')
 preds = inference(model, X_test)
 
+# remove exixting slice_output metrics file
+out_path = 'out/'
+if os.path.isfile(out_path + 'slice_output.txt'):
+    os.remove(out_path + 'slice_output.txt')
+
 # compute for all the tests in main df
 logging.info('computing metrics for all data..')
+with open(out_path + 'slice_output.txt', 'a', encoding="utf8") as file:
+    file.write('Classification performance metrics for all data\n\n')
+
 compute_model_metrics(y_test, preds)
 
-# Get and reshape confusion matrix data
-# matrix = confusion_matrix(y_test, preds)
-# print(matrix)
 
 logging.info('Computing metrics for each categorical column slice..')
-
+with open(out_path + 'slice_output.txt', 'a', encoding="utf8") as file:
+    file.write('Classification performance metrics for for each categorical column slice\n')
 # compute metrics for each slice total 8, cat cols
 # workclass below should be passed as a list such as cat_features
 # sliced_model_metrics(test, X_test, y_test, 'workclass', model)
 
-out_path = 'out/'
-if os.path.isfile(out_path + 'slice_output.txt'):
-    os.remove(out_path + 'slice_output.txt')
 
 
 for col in cat_features:
