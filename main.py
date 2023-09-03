@@ -6,10 +6,11 @@ Date  : Sept, 2023
 '''
 # import libraries
 import pandas as pd
+import numpy as np
 from fastapi import FastAPI, HTTPException
 from ml.data import process_data
 from pydantic import BaseModel
-from ml.model import load, inference
+from ml.model import load, inference, get_label, get_pred
 from sklearn.model_selection import train_test_split
 
 # Create a RESTful API using FastAPI this must implement:
@@ -32,6 +33,10 @@ cat_features = [
 model = load(model_path + model_name)
 
 
+class Get(BaseModel):
+    greeting: str 
+    prediction: str
+
 class Data(BaseModel):
     age: int 
     workclass: str
@@ -48,6 +53,30 @@ class Data(BaseModel):
     hours_per_week: int 
     native_country: str
     salary: str
+    # prediction:int
+
+
+data = {
+    "age": 29, 
+    "workclass": ["Private"], 
+    "fnlgt": [185908],
+    "education": ["Bachelors"], 
+    "education_num": [13],
+    "marital_status": ["Married-civ-spouse"],
+    "occupation": ["Exec-managerial"],
+    "relationship": ["Husband"],
+    "race": ["Black"],
+    "sex": ["Male"],
+    "capital_gain": [0],
+    "capital_loss": [0],
+    "hours_per_week": [55],
+    "native_country": ["United-States"],
+    "salary": [">50K"]
+    }
+
+
+
+
 
 
 # get data to test
@@ -71,7 +100,10 @@ app = FastAPI(
 # Define a GET for the specified endpoint
 @app.get('/')
 async def greet():
-    return {'greeting': 'Greetings from my API!'}
+    pred = get_pred(data, cat_features, model, encoder, lb)
+    val = {'greeting': 'Greetings from my API!',
+           'prediction': get_label(pred)}
+    return np.array(list(val.items()))
 
 
 # Define a POST for the specified endpoint
@@ -80,12 +112,8 @@ async def greet():
 async def ingest_data(data: Data):
     dict_data = dict(data)
     df_data = pd.DataFrame.from_dict([dict_data])
-    print(df_data)
 
-    X_test, _, _, _ = process_data(
-    df_data, categorical_features=cat_features, label='salary', training=False, encoder=encoder, lb=lb)
-
-    pred = inference(model, X_test)[0]
+    pred = get_pred(df_data, cat_features, model, encoder, lb)
 
     # make sure that int values are greater than 0
     if data.capital_gain or data.capital_loss < 0:
@@ -104,16 +132,3 @@ async def ingest_data(data: Data):
         )
 
     return data
-
-
-
-
-
-
-
-# POST that does model inference.
-# Type hinting must be used.
-# Use a Pydantic model to ingest the body from POST. This model should contain an example.
-# Hint: the data has names with hyphens and Python does not allow those as variable names. Do not modify the column names in the csv and instead use the functionality of FastAPI/Pydantic/etc to deal with this.
-# Write 3 unit tests to test the API (one for the GET and two for POST, one that tests each prediction).
-

@@ -7,6 +7,7 @@ Date  : August 28, 2023
 # import libraries
 import os
 import pickle
+import pandas as pd
 from ml.data import process_data
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import RandomForestClassifier
@@ -158,3 +159,20 @@ def compute_model_metrics(y, preds):
         file.close()
 
     return precision, recall, fbeta
+
+
+def get_label(pred):
+    if pred == 0:
+        return '>=50K'
+    else:
+        return '>50K'
+    
+def get_pred(data, cat_features, model, encoder, lb):
+    df_data = pd.DataFrame(data)
+    print(df_data)
+
+    X_test, _, _, _ = process_data(
+    df_data, categorical_features=cat_features, label='salary', training=False, encoder=encoder, lb=lb)
+
+    pred = inference(model, X_test)[0]
+    return pred
