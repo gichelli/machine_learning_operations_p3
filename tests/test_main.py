@@ -25,7 +25,7 @@ def test_get_greeting_success():
 
 def test_prediction():
     r = client.get('/out/')
-    assert r.json().get('prediction') == '>50K'
+    assert r.json() == '>50K'
     assert r.status_code == 200  
 
 # test post request when data is posted correctly return 200
