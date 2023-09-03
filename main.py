@@ -74,11 +74,6 @@ data = {
     "salary": [">50K"]
     }
 
-
-
-
-
-
 # get data to test
 df = pd.read_csv("data/census.csv", skipinitialspace=True)
 df.columns = df.columns.str.replace('-', '_')
