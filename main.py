@@ -103,12 +103,6 @@ async def preds():
     pred = get_pred(data, cat_features, model, encoder, lb)
     return get_label(pred)
 
-@app.get('/data/')
-async def preds():
-    pred = get_pred(data, cat_features, model, encoder, lb)
-    return get_label(pred)
-
-
 
 # Define a POST for the specified endpoint
 #  test cases for EACH of the possible inferences (results/outputs) of the ML model.
@@ -135,9 +129,4 @@ async def ingest_data(data: Data):
                             detail=f"Prediction salary {pred}: is not equal to given salary: {df_data['salary'][0]}"
         )
     data.salary = get_label(pred)
-    print("***************")
-    print(data.salary)
-    print("***************")
-    print(pred)
-    print(data)
     return data
