@@ -129,5 +129,7 @@ async def ingest_data(data: Data):
         raise HTTPException(status_code=400,
                             detail=f"Prediction salary {pred}: is not equal to given salary: {df_data['salary'][0]}"
         )
-
+    # data.salary = get_label(pred)
+    # print(pred)
+    # print(data)
     return data

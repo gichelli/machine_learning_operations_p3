@@ -1042,3 +1042,105 @@ precision: 0.8395
 recall: 0.4690
 fbeta: 0.6018
 
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Not-in-family class
+precision: 0.9714
+recall: 0.1868
+fbeta: 0.3134
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.3333
+fbeta: 0.5000
+
+Computer metrics for Husband class
+precision: 0.8016
+recall: 0.5926
+fbeta: 0.6814
+
+Computer metrics for Wife class
+precision: 0.8732
+recall: 0.4079
+fbeta: 0.5561
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1429
+fbeta: 0.2500
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.1250
+fbeta: 0.2222
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Own-child class
+precision: 0.8000
+recall: 0.3077
+fbeta: 0.4444
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2405
+fbeta: 0.3878
+
+Computer metrics for Husband class
+precision: 0.7680
+recall: 0.5813
+fbeta: 0.6617
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1750
+fbeta: 0.2979
+
+Computer metrics for Wife class
+precision: 0.8333
+recall: 0.4839
+fbeta: 0.6122
+
+Computer metrics for Other-relative class
+precision: 0.8333
+recall: 0.5556
+fbeta: 0.6667
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Husband class
+precision: 0.7817
+recall: 0.5792
+fbeta: 0.6654
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.0000
+fbeta: 0.0000
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2692
+fbeta: 0.4242
+
+Computer metrics for Wife class
+precision: 0.8608
+recall: 0.4277
+fbeta: 0.5714
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1944
+fbeta: 0.3256
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.3333
+fbeta: 0.5000
+

@@ -10,7 +10,7 @@ import json
 # Write a script that POSTS to the API using the requests module and returns 
 # both the result of model inference and the status code. Include a screenshot
 #  of the result. Name this live_post.png.
-client = TestClient(app)
+
 
 data = {
     "age": 29, 
@@ -30,4 +30,16 @@ data = {
     "salary": ""
     }
 
-r = requests.post("/data/", data=json.dumps(data))
+url = 'https://gichelli-a73102c021b3.herokuapp.com/out/'
+
+# r = requests.post(url, data=json.dumps(data))
+# print(r.status_code)
+# print(f"Response estatus code: {r.status_code}")
+# print(r.json)
+
+# r = requests.get('/out/')
+
+# # pred = get_pred(df_data, cat_features, model, encoder, lb)
+
+# # pred = get
+# print(f"Prediction is: {r.json()}")
