@@ -19,13 +19,12 @@ client = TestClient(app)
 # dict_val = {'greeting': 'Greetings from my API!'}
 # test get request
 def test_get_greeting_success():
-
     r = client.get('/')
-    assert r.json().get('greeting') == 'Greetings from my API!'
+    assert r.json() == 'Greetings from my API!'
     assert r.status_code == 200
 
 def test_prediction():
-    r = client.get('/')
+    r = client.get('/out/')
     assert r.json().get('prediction') == '>50K'
     assert r.status_code == 200  
 

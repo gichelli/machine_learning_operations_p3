@@ -974,3 +974,71 @@ precision: 1.0000
 recall: 0.4286
 fbeta: 0.6000
 
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.1579
+fbeta: 0.2727
+
+Computer metrics for Husband class
+precision: 0.7877
+recall: 0.6036
+fbeta: 0.6835
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.0909
+fbeta: 0.1667
+
+Computer metrics for Not-in-family class
+precision: 1.0000
+recall: 0.2045
+fbeta: 0.3396
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.1429
+fbeta: 0.2500
+
+Computer metrics for Wife class
+precision: 0.8193
+recall: 0.4626
+fbeta: 0.5913
+
+####################################################
+Performance metrics for relationship slice:
+####################################################
+
+Computer metrics for Husband class
+precision: 0.7788
+recall: 0.5981
+fbeta: 0.6766
+
+Computer metrics for Unmarried class
+precision: 1.0000
+recall: 0.2727
+fbeta: 0.4286
+
+Computer metrics for Not-in-family class
+precision: 0.9796
+recall: 0.2824
+fbeta: 0.4384
+
+Computer metrics for Own-child class
+precision: 1.0000
+recall: 0.1429
+fbeta: 0.2500
+
+Computer metrics for Other-relative class
+precision: 1.0000
+recall: 0.0000
+fbeta: 0.0000
+
+Computer metrics for Wife class
+precision: 0.8395
+recall: 0.4690
+fbeta: 0.6018
+

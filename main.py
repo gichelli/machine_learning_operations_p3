@@ -100,9 +100,16 @@ app = FastAPI(
 # Define a GET for the specified endpoint
 @app.get('/')
 async def greet():
+    return 'Greetings from my API!'
+
+
+@app.get('/out/')
+async def greet():
+    print("hereeee")
     pred = get_pred(data, cat_features, model, encoder, lb)
-    val = {'greeting': 'Greetings from my API!',
-           'prediction': get_label(pred)}
+    # val = {'greeting': 'Greetings from my API!',
+    #        'prediction': get_label(pred)}
+    val = {'prediction': get_label(pred)}
     return np.array(list(val.items()))
 
 
