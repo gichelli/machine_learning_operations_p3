@@ -23,6 +23,11 @@ def test_get_greeting_success():
     assert r.json() == 'Greetings from my API!'
     assert r.status_code == 200
 
+def test_get_data():
+    r = client.get('/data/')
+    # assert r.json() == 'Greetings from my API!'
+    assert r.status_code == 200
+
 def test_prediction():
     r = client.get('/out/')
     assert r.json() == '>50K'
