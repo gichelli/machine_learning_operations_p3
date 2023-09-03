@@ -33,4 +33,5 @@ data = {
 url = 'https://gichelli-a73102c021b3.herokuapp.com/data/'
 
 r = requests.post(url, data=json.dumps(data))
-print(f"Prediction is: {r.json().get('salary')}")
+print(f"Response status code is: {r.status_code}")
+print(f"Predicted salary is: {r.json().get('salary')}")
