@@ -19,21 +19,15 @@ client = TestClient(app)
 # dict_val = {'greeting': 'Greetings from my API!'}
 # test get request
 def test_get_greeting_success():
-    # txt = "Greetings from my API!"
-    # print("*************")
-    # print(type(txt))
-    # print("*************")
+
     r = client.get('/')
-    # print("*************")
-    # print(r.text)
-    # print(r.json().get('greeting'))
-    # print("*************")
-    
-    # # print(r)
-    print(r.status_code)
-    # assert r.status_code == 200
-    # assert r.text == "Greetings from my API!"
     assert r.json().get('greeting') == 'Greetings from my API!'
+    assert r.status_code == 200
+
+def test_prediction():
+    r = client.get('/')
+    assert r.json().get('prediction') == '>50K'
+    assert r.status_code == 200  
 
 # test post request when data is posted correctly return 200
 def test_post_data_success():
@@ -125,9 +119,4 @@ def test_inference_fail():
          "salary": '>80' #prediction should be <=50k
          }
     r = client.post("/data/", data=json.dumps(data))
-    assert r.status_code == 400
-
-def test_prediction():
-    r = client.get('/')
-    assert r.json().get('prediction') == '>50K'
-    assert r.status_code == 200    
+    assert r.status_code == 400  
