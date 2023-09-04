@@ -33,10 +33,6 @@ cat_features = [
 model = load(model_path + model_name)
 
 
-class Get(BaseModel):
-    greeting: str 
-    prediction: str
-
 class Data(BaseModel):
     age: int 
     workclass: str
@@ -52,11 +48,30 @@ class Data(BaseModel):
     capital_loss: int 
     hours_per_week: int 
     native_country: str
-    salary: str
+    # salary: str
     # prediction:int
 
+    model_config = {
+    "json_schema_extra": {
+        "examples": [{
+                    "age": 29, 
+                    "workclass": "Private", 
+                    "fnlgt": 185908,
+                    "education": "Bachelors", 
+                    "education_num": 13,
+                    "marital_status": "Married-civ-spouse",
+                    "occupation": "Exec-managerial",
+                    "relationship": "Husband",
+                    "race": "Black",
+                    "sex": "Male",
+                    "capital_gain": 0,
+                    "capital_loss": 0,
+                    "hours_per_week": 55,
+                    "native_country": "United-States",}]
+        }
+    }
 
-data = {
+data_greater_than = {
     "age": 29, 
     "workclass": ["Private"], 
     "fnlgt": [185908],
@@ -71,7 +86,23 @@ data = {
     "capital_loss": [0],
     "hours_per_week": [55],
     "native_country": ["United-States"],
-    "salary": [">50K"]
+    }
+
+data_less_than = {
+    "age": 45, 
+    "workclass": ["State-gov"], 
+    "fnlgt": [50567],
+    "education": ["HS-grad"], 
+    "education_num": [9],
+    "marital_status": ["Married-civ-spouse"],
+    "occupation": ["Exec-managerial"],
+    "relationship": ["Wife"],
+    "race": ["White"],
+    "sex": ["Femal"],
+    "capital_gain": [0],
+    "capital_loss": [0],
+    "hours_per_week": [40],
+    "native_country": ["United-States"],
     }
 
 # get data to test
@@ -97,36 +128,50 @@ app = FastAPI(
 async def greet():
     return 'Greetings from my API!'
 
-
-@app.get('/out/')
+@app.get('/out/less/')
 async def preds():
-    pred = get_pred(data, cat_features, model, encoder, lb)
+    data_less_than['salary'] = ''
+    pred = get_pred(data_less_than, cat_features, model, encoder, lb)
+    return get_label(pred)
+
+@app.get('/out/more/')
+async def preds():
+    data_greater_than['salary'] = ''
+    pred = get_pred(data_greater_than, cat_features, model, encoder, lb)
     return get_label(pred)
 
 
 # Define a POST for the specified endpoint
 #  test cases for EACH of the possible inferences (results/outputs) of the ML model.
-@app.post("/data/")
-async def ingest_data(data: Data):
-    dict_data = dict(data)
-    df_data = pd.DataFrame.from_dict([dict_data])
 
+@app.post("/data/")
+async def update_data(data: Data):
+    results = {"age": data.age, 
+                "workclass": data.workclass, 
+                "fnlgt": data.fnlgt,
+                "education": data.education, 
+                "education_num": data.education_num,
+                "marital_status": data.marital_status,
+                "occupation": data.occupation,
+                "relationship": data.relationship,
+                "race": data.race,
+                "sex": data.sex,
+                "capital_gain": data.capital_gain,
+                "capital_loss": data.capital_loss,
+                "hours_per_week": data.hours_per_week,
+                "native_country": data.native_country}
+    
+    # make sure that int values are greater than 0
+    for value in results.values():
+        if isinstance(value, int) and value < 0:
+            raise HTTPException(status_code=400, detail=f"Negative numbers cannot be used.")
+
+    df_data = pd.DataFrame.from_dict([results])
+
+    df_data['salary'] = ''
     pred = get_pred(df_data, cat_features, model, encoder, lb)
 
-    # make sure that int values are greater than 0
-    if data.capital_gain or data.capital_loss < 0:
-        raise HTTPException(status_code=400, detail="capital_gain and/or capital_loss" 
-                            + "needs to be above 0.")
 
-    if df_data['salary'][0] == '>50K'  and pred != 0:
-        # pred is 0 when salary is below or equal to 50k
-        raise HTTPException(status_code=400,
-                            detail=f"Prediction salary {pred}: is not equal to given salary: {df_data['salary'][0]}",
-        )
-    if df_data['salary'][0] != '<=50K' and pred == 0:
-        # pred is 1 when salary is below or equal to 50k
-        raise HTTPException(status_code=400,
-                            detail=f"Prediction salary {pred}: is not equal to given salary: {df_data['salary'][0]}"
-        )
-    data.salary = get_label(pred)
-    return data
+    results['salary'] = get_label(pred)
+
+    return results

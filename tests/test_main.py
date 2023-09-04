@@ -16,17 +16,23 @@ cat_features = [
 
 client = TestClient(app)
 
-# dict_val = {'greeting': 'Greetings from my API!'}
+
 # test get request
 def test_get_greeting_success():
     r = client.get('/')
     assert r.json() == 'Greetings from my API!'
     assert r.status_code == 200
-    
 
-def test_prediction():
-    r = client.get('/out/')
+# test prediction when is more than 50k
+def test_pred_greater_than():
+    r = client.get('/out/more/')
     assert r.json() == '>50K'
+    assert r.status_code == 200  
+
+# test prediction when is less or equal than 50k
+def test_pred_less_than():
+    r = client.get('/out/less/')
+    assert r.json() == '<=50K'
     assert r.status_code == 200  
 
 # test post request when data is posted correctly return 200
@@ -46,14 +52,18 @@ def test_post_data_success():
         "capital_loss": 0,
         "hours_per_week": 55,
         "native_country": "United-States",
-        "salary": ""
         }
     r = client.post("/data/", data=json.dumps(data))
+    print(r.json())
+    assert r.json().get('age') == 29
+    assert r.json().get('workclass') == 'Private'
+    assert r.json().get('hours_per_week') == 55
+    assert r.json().get('sex') == 'Male'
+    assert r.json().get('education') == 'Bachelors'
     assert r.status_code == 200
 
 # test post request when data is posted incorrectly return 400
 def test_post_data_fail():
-
     data = {
         "age": 45, 
          "workclass": "State-gov", 
@@ -69,7 +79,6 @@ def test_post_data_fail():
          "capital_loss": 0,
          "hours_per_week": 40,
          "native_country": "United-States", 
-         "salary": ""
          }
 
     r = client.post("/data/", data=json.dumps(data))
@@ -93,30 +102,7 @@ def test_inference_success():
         "capital_loss": 0,
         "hours_per_week": 55,
         "native_country": "United-States",
-        "salary": ">50" #giving this salary confirms that predicted salary is correct
     }
     r = client.post("/data/", data=json.dumps(data))
+    assert r.json().get('salary')== '>50K'
     assert r.status_code == 200
-
-# test getting wrong prediction, prediction is 0 if salary is <=70k
-def test_inference_fail():
-
-    data = {
-        "age": 45, 
-         "workclass": "State-gov", 
-         "fnlgt": 50567,
-         "education": "HS-grad", 
-         "education_num": 9,
-         "marital_status": "Married-civ-spouse",
-         "occupation": "Exec-managerial",
-         "relationship": "Wife",
-         "race": "White",
-         "sex": "Female",
-         "capital_gain": 0,
-         "capital_loss": 0,
-         "hours_per_week": 40,
-         "native_country": "United-States", 
-         "salary": '>80' #prediction should be <=50k
-         }
-    r = client.post("/data/", data=json.dumps(data))
-    assert r.status_code == 400  

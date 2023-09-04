@@ -48,6 +48,8 @@ Evaluation data can be found inside out folder.
 
 slice_output.txt: Includes the Model metrics done in both, the whole dataframe as well as sliced sections of the data.
 
+For model evaluation 20% of the dataset was splitted.
+
 ## Metrics
 _Please include the metrics used and your model's performance on those metrics._
 

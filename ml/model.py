@@ -160,16 +160,16 @@ def compute_model_metrics(y, preds):
 
     return precision, recall, fbeta
 
-
+# convert prediction to salary labels
 def get_label(pred):
     if pred == 0:
-        return '>=50K'
+        return '<=50K'
     else:
         return '>50K'
-    
+
+# get prediction for given dataframe 
 def get_pred(data, cat_features, model, encoder, lb):
     df_data = pd.DataFrame(data)
-    print(df_data)
 
     X_test, _, _, _ = process_data(
     df_data, categorical_features=cat_features, label='salary', training=False, encoder=encoder, lb=lb)
