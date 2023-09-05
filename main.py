@@ -144,7 +144,7 @@ async def preds():
 # Define a POST for the specified endpoint
 #  test cases for EACH of the possible inferences (results/outputs) of the ML model.
 
-@app.post("/data/")
+@app.post("/data")
 async def update_data(data: Data):
     results = {"age": data.age, 
                 "workclass": data.workclass, 

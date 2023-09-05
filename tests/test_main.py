@@ -53,7 +53,7 @@ def test_post_data_success():
         "hours_per_week": 55,
         "native_country": "United-States",
         }
-    r = client.post("/data/", data=json.dumps(data))
+    r = client.post("/data", data=json.dumps(data))
     print(r.json())
     assert r.json().get('age') == 29
     assert r.json().get('workclass') == 'Private'
@@ -81,7 +81,7 @@ def test_post_data_fail():
          "native_country": "United-States", 
          }
 
-    r = client.post("/data/", data=json.dumps(data))
+    r = client.post("/data", data=json.dumps(data))
     assert r.status_code == 400
 
 # prediction is 1 if salary is >50k
@@ -103,6 +103,6 @@ def test_inference_success():
         "hours_per_week": 55,
         "native_country": "United-States",
     }
-    r = client.post("/data/", data=json.dumps(data))
+    r = client.post("/data", data=json.dumps(data))
     assert r.json().get('salary')== '>50K'
     assert r.status_code == 200
