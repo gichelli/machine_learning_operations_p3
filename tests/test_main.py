@@ -53,7 +53,7 @@ def test_post_data_success():
         "hours_per_week": 55,
         "native_country": "United-States",
         }
-    r = client.post("/data", data=json.dumps(data))
+    r = client.post("/data/", data=json.dumps(data))
     print(r.json())
     assert r.json().get('age') == 29
     assert r.json().get('workclass') == 'Private'
@@ -81,11 +81,11 @@ def test_post_data_fail():
          "native_country": "United-States", 
          }
 
-    r = client.post("/data", data=json.dumps(data))
+    r = client.post("/data/", data=json.dumps(data))
     assert r.status_code == 400
 
-# prediction is 1 if salary is >50k
-def test_inference_success():
+# prediction is 1 if salary is >50k, test we get correct prediction
+def test_inference_morethan():
 
     data = {
         "age": 29, 
@@ -103,6 +103,29 @@ def test_inference_success():
         "hours_per_week": 55,
         "native_country": "United-States",
     }
-    r = client.post("/data", data=json.dumps(data))
+    r = client.post("/data/", data=json.dumps(data))
     assert r.json().get('salary')== '>50K'
+    assert r.status_code == 200
+
+# prediction is 0 if salary is <=50k, test we get correct prediction
+def test_inference_lessthan():
+
+    data = {
+        "age": 45, 
+         "workclass": "State-gov", 
+         "fnlgt": 50567,
+         "education": "HS-grad", 
+         "education_num": 9,
+         "marital_status": "Married-civ-spouse",
+         "occupation": "Exec-managerial",
+         "relationship": "Wife",
+         "race": "White",
+         "sex": "Female",
+         "capital_gain": 0,
+         "capital_loss": 0,
+         "hours_per_week": 40,
+         "native_country": "United-States", 
+         }
+    r = client.post("/data/", data=json.dumps(data))
+    assert r.json().get('salary')== '<=50K'
     assert r.status_code == 200
